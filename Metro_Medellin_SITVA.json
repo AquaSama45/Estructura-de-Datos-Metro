@@ -1,0 +1,883 @@
+{
+  "sistema": "Metro de Medellín - SITVA",
+  "fuente": "Metro de Medellín — mapa oficial 16/06/2021",
+  "nota": "Distancias calculadas con la fórmula de Haversine (coordenadas GPS aprox.)",
+  "lineas": [
+    {
+      "clave": "A",
+      "hoja": "L.A",
+      "nombre_completo": "Tipo: Metro  |  21 estaciones / paradas",
+      "tipo": "",
+      "total_estaciones": 21,
+      "longitud_total_km": 23.86,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "Niquía",
+          "municipio": "Bello",
+          "latitud": 6.3374,
+          "longitud": -75.5516,
+          "dist_sig_km": 1.6,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "Bello",
+          "municipio": "Bello",
+          "latitud": 6.3239,
+          "longitud": -75.5567,
+          "dist_sig_km": 1.61,
+          "dist_acumulada_km": 3.21
+        },
+        {
+          "numero": 3,
+          "nombre": "Madera",
+          "municipio": "Bello",
+          "latitud": 6.3097,
+          "longitud": -75.5595,
+          "dist_sig_km": 1.63,
+          "dist_acumulada_km": 4.84
+        },
+        {
+          "numero": 4,
+          "nombre": "Acevedo",
+          "municipio": "Medellín",
+          "latitud": 6.2951,
+          "longitud": -75.5607,
+          "dist_sig_km": 0.91,
+          "dist_acumulada_km": 5.75
+        },
+        {
+          "numero": 5,
+          "nombre": "Tricentenario",
+          "municipio": "Medellín",
+          "latitud": 6.287,
+          "longitud": -75.562,
+          "dist_sig_km": 1.04,
+          "dist_acumulada_km": 6.79
+        },
+        {
+          "numero": 6,
+          "nombre": "Caribe",
+          "municipio": "Medellín",
+          "latitud": 6.2779,
+          "longitud": -75.564,
+          "dist_sig_km": 1.05,
+          "dist_acumulada_km": 7.84
+        },
+        {
+          "numero": 7,
+          "nombre": "Universidad",
+          "municipio": "Medellín",
+          "latitud": 6.2685,
+          "longitud": -75.5643,
+          "dist_sig_km": 0.87,
+          "dist_acumulada_km": 8.71
+        },
+        {
+          "numero": 8,
+          "nombre": "Hospital",
+          "municipio": "Medellín",
+          "latitud": 6.2607,
+          "longitud": -75.5637,
+          "dist_sig_km": 0.78,
+          "dist_acumulada_km": 9.49
+        },
+        {
+          "numero": 9,
+          "nombre": "Prado",
+          "municipio": "Medellín",
+          "latitud": 6.2537,
+          "longitud": -75.5632,
+          "dist_sig_km": 0.78,
+          "dist_acumulada_km": 10.27
+        },
+        {
+          "numero": 10,
+          "nombre": "Parque Berrío",
+          "municipio": "Medellín",
+          "latitud": 6.2467,
+          "longitud": -75.564,
+          "dist_sig_km": 0.68,
+          "dist_acumulada_km": 10.95
+        },
+        {
+          "numero": 11,
+          "nombre": "San Antonio",
+          "municipio": "Medellín",
+          "latitud": 6.2407,
+          "longitud": -75.5653,
+          "dist_sig_km": 0.62,
+          "dist_acumulada_km": 11.57
+        },
+        {
+          "numero": 12,
+          "nombre": "Alpujarra",
+          "municipio": "Medellín",
+          "latitud": 6.2361,
+          "longitud": -75.5685,
+          "dist_sig_km": 0.84,
+          "dist_acumulada_km": 12.41
+        },
+        {
+          "numero": 13,
+          "nombre": "Exposiciones",
+          "municipio": "Medellín",
+          "latitud": 6.2302,
+          "longitud": -75.5732,
+          "dist_sig_km": 0.9,
+          "dist_acumulada_km": 13.31
+        },
+        {
+          "numero": 14,
+          "nombre": "Industriales",
+          "municipio": "Medellín",
+          "latitud": 6.2237,
+          "longitud": -75.578,
+          "dist_sig_km": 1.55,
+          "dist_acumulada_km": 14.86
+        },
+        {
+          "numero": 15,
+          "nombre": "Poblado",
+          "municipio": "Medellín",
+          "latitud": 6.2098,
+          "longitud": -75.5782,
+          "dist_sig_km": 1.19,
+          "dist_acumulada_km": 16.05
+        },
+        {
+          "numero": 16,
+          "nombre": "Aguacatala",
+          "municipio": "Medellín",
+          "latitud": 6.1991,
+          "longitud": -75.5791,
+          "dist_sig_km": 1.22,
+          "dist_acumulada_km": 17.27
+        },
+        {
+          "numero": 17,
+          "nombre": "Ayurá",
+          "municipio": "Envigado",
+          "latitud": 6.1882,
+          "longitud": -75.5778,
+          "dist_sig_km": 1.49,
+          "dist_acumulada_km": 18.76
+        },
+        {
+          "numero": 18,
+          "nombre": "Envigado",
+          "municipio": "Itagüí",
+          "latitud": 6.1756,
+          "longitud": -75.5825,
+          "dist_sig_km": 1.36,
+          "dist_acumulada_km": 20.12
+        },
+        {
+          "numero": 19,
+          "nombre": "Itagüí",
+          "municipio": "Itagüí",
+          "latitud": 6.165,
+          "longitud": -75.5887,
+          "dist_sig_km": 2.4,
+          "dist_acumulada_km": 22.52
+        },
+        {
+          "numero": 20,
+          "nombre": "Sabaneta",
+          "municipio": "Sabaneta",
+          "latitud": 6.1523,
+          "longitud": -75.6062,
+          "dist_sig_km": 1.34,
+          "dist_acumulada_km": 23.86
+        },
+        {
+          "numero": 21,
+          "nombre": "La Estrella",
+          "municipio": "Sabaneta",
+          "latitud": 6.1425,
+          "longitud": -75.6133,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 23.86
+        }
+      ]
+    },
+    {
+      "clave": "B",
+      "hoja": "L.B",
+      "nombre_completo": "Tipo: Metro  |  7 estaciones / paradas",
+      "tipo": "",
+      "total_estaciones": 7,
+      "longitud_total_km": 5.32,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "San Antonio",
+          "municipio": "Medellín",
+          "latitud": 6.2407,
+          "longitud": -75.5653,
+          "dist_sig_km": 0.61,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "Cisneros",
+          "municipio": "Medellín",
+          "latitud": 6.2422,
+          "longitud": -75.5706,
+          "dist_sig_km": 0.92,
+          "dist_acumulada_km": 1.53
+        },
+        {
+          "numero": 3,
+          "nombre": "Suramericana",
+          "municipio": "Medellín",
+          "latitud": 6.2438,
+          "longitud": -75.5788,
+          "dist_sig_km": 0.98,
+          "dist_acumulada_km": 2.51
+        },
+        {
+          "numero": 4,
+          "nombre": "Estadio",
+          "municipio": "Medellín",
+          "latitud": 6.2449,
+          "longitud": -75.5876,
+          "dist_sig_km": 0.98,
+          "dist_acumulada_km": 3.49
+        },
+        {
+          "numero": 5,
+          "nombre": "Floresta",
+          "municipio": "Medellín",
+          "latitud": 6.2457,
+          "longitud": -75.5964,
+          "dist_sig_km": 0.96,
+          "dist_acumulada_km": 4.45
+        },
+        {
+          "numero": 6,
+          "nombre": "Santa Lucía",
+          "municipio": "Medellín",
+          "latitud": 6.2447,
+          "longitud": -75.605,
+          "dist_sig_km": 0.87,
+          "dist_acumulada_km": 5.32
+        },
+        {
+          "numero": 7,
+          "nombre": "San Javier",
+          "municipio": "Medellín",
+          "latitud": 6.2435,
+          "longitud": -75.6128,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 5.32
+        }
+      ]
+    },
+    {
+      "clave": "K",
+      "hoja": "L.K",
+      "nombre_completo": "Tipo: Cable  |  4 estaciones / paradas",
+      "tipo": "",
+      "total_estaciones": 4,
+      "longitud_total_km": 2.66,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "Acevedo",
+          "municipio": "Medellín",
+          "latitud": 6.2951,
+          "longitud": -75.5607,
+          "dist_sig_km": 0.95,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "Andalucía",
+          "municipio": "Medellín",
+          "latitud": 6.2983,
+          "longitud": -75.5527,
+          "dist_sig_km": 0.85,
+          "dist_acumulada_km": 1.8
+        },
+        {
+          "numero": 3,
+          "nombre": "Popular",
+          "municipio": "Medellín",
+          "latitud": 6.301,
+          "longitud": -75.5455,
+          "dist_sig_km": 0.86,
+          "dist_acumulada_km": 2.66
+        },
+        {
+          "numero": 4,
+          "nombre": "Santo Domingo",
+          "municipio": "Medellín",
+          "latitud": 6.304,
+          "longitud": -75.5383,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 2.66
+        }
+      ]
+    },
+    {
+      "clave": "L",
+      "hoja": "L.L",
+      "nombre_completo": "Tipo: Cable  |  2 estaciones / paradas",
+      "tipo": "",
+      "total_estaciones": 2,
+      "longitud_total_km": 5.28,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "Santo Domingo",
+          "municipio": "Medellín",
+          "latitud": 6.304,
+          "longitud": -75.5383,
+          "dist_sig_km": 5.28,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "Arví",
+          "municipio": "Corregimiento Santa Elena",
+          "latitud": 6.319,
+          "longitud": -75.493,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 5.28
+        }
+      ]
+    },
+    {
+      "clave": "J",
+      "hoja": "L.J",
+      "nombre_completo": "Tipo: Cable  |  4 estaciones / paradas",
+      "tipo": "",
+      "total_estaciones": 4,
+      "longitud_total_km": 2.85,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "San Javier",
+          "municipio": "Medellín",
+          "latitud": 6.2435,
+          "longitud": -75.6128,
+          "dist_sig_km": 1.01,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "Juan XXIII",
+          "municipio": "Medellín",
+          "latitud": 6.2513,
+          "longitud": -75.6174,
+          "dist_sig_km": 0.97,
+          "dist_acumulada_km": 1.98
+        },
+        {
+          "numero": 3,
+          "nombre": "Vallejuelos",
+          "municipio": "Medellín",
+          "latitud": 6.259,
+          "longitud": -75.6215,
+          "dist_sig_km": 0.87,
+          "dist_acumulada_km": 2.85
+        },
+        {
+          "numero": 4,
+          "nombre": "La Aurora",
+          "municipio": "Medellín",
+          "latitud": 6.266,
+          "longitud": -75.625,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 2.85
+        }
+      ]
+    },
+    {
+      "clave": "H",
+      "hoja": "L.H",
+      "nombre_completo": "Tipo: Cable  |  3 estaciones / paradas",
+      "tipo": "",
+      "total_estaciones": 3,
+      "longitud_total_km": 1.4,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "Oriente",
+          "municipio": "Medellín",
+          "latitud": 6.229,
+          "longitud": -75.537,
+          "dist_sig_km": 0.7,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "Las Torres",
+          "municipio": "Medellín",
+          "latitud": 6.231,
+          "longitud": -75.531,
+          "dist_sig_km": 0.7,
+          "dist_acumulada_km": 1.4
+        },
+        {
+          "numero": 3,
+          "nombre": "Villa Sierra",
+          "municipio": "Medellín",
+          "latitud": 6.233,
+          "longitud": -75.525,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 1.4
+        }
+      ]
+    },
+    {
+      "clave": "M",
+      "hoja": "L.M",
+      "nombre_completo": "Tipo: Cable  |  3 estaciones / paradas",
+      "tipo": "",
+      "total_estaciones": 3,
+      "longitud_total_km": 1.96,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "Miraflores",
+          "municipio": "Medellín",
+          "latitud": 6.2285,
+          "longitud": -75.553,
+          "dist_sig_km": 1.03,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "El Pinal",
+          "municipio": "Medellín",
+          "latitud": 6.231,
+          "longitud": -75.544,
+          "dist_sig_km": 0.93,
+          "dist_acumulada_km": 1.96
+        },
+        {
+          "numero": 3,
+          "nombre": "Trece de Noviembre",
+          "municipio": "Medellín",
+          "latitud": 6.2335,
+          "longitud": -75.536,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 1.96
+        }
+      ]
+    },
+    {
+      "clave": "P",
+      "hoja": "L.P",
+      "nombre_completo": "Tipo: Cable  |  4 estaciones / paradas",
+      "tipo": "",
+      "total_estaciones": 4,
+      "longitud_total_km": 2.65,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "Acevedo",
+          "municipio": "Medellín",
+          "latitud": 6.2951,
+          "longitud": -75.5607,
+          "dist_sig_km": 0.83,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "SENA",
+          "municipio": "Medellín",
+          "latitud": 6.297,
+          "longitud": -75.568,
+          "dist_sig_km": 0.91,
+          "dist_acumulada_km": 1.74
+        },
+        {
+          "numero": 3,
+          "nombre": "Doce de Octubre",
+          "municipio": "Medellín",
+          "latitud": 6.299,
+          "longitud": -75.576,
+          "dist_sig_km": 0.91,
+          "dist_acumulada_km": 2.65
+        },
+        {
+          "numero": 4,
+          "nombre": "El Progreso",
+          "municipio": "Medellín",
+          "latitud": 6.301,
+          "longitud": -75.584,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 2.65
+        }
+      ]
+    },
+    {
+      "clave": "T",
+      "hoja": "L.T",
+      "nombre_completo": "Tipo: Tranvía  |  9 estaciones / paradas",
+      "tipo": "",
+      "total_estaciones": 9,
+      "longitud_total_km": 6.1,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "San Antonio",
+          "municipio": "Medellín",
+          "latitud": 6.2407,
+          "longitud": -75.5653,
+          "dist_sig_km": 0.82,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "Barrio Colón",
+          "municipio": "Medellín",
+          "latitud": 6.2355,
+          "longitud": -75.56,
+          "dist_sig_km": 0.67,
+          "dist_acumulada_km": 1.49
+        },
+        {
+          "numero": 3,
+          "nombre": "Perpetuo Socorro",
+          "municipio": "Medellín",
+          "latitud": 6.231,
+          "longitud": -75.556,
+          "dist_sig_km": 0.52,
+          "dist_acumulada_km": 2.01
+        },
+        {
+          "numero": 4,
+          "nombre": "Bicentenario",
+          "municipio": "Medellín",
+          "latitud": 6.2285,
+          "longitud": -75.552,
+          "dist_sig_km": 0.49,
+          "dist_acumulada_km": 2.5
+        },
+        {
+          "numero": 5,
+          "nombre": "Buenos Aires",
+          "municipio": "Medellín",
+          "latitud": 6.2265,
+          "longitud": -75.548,
+          "dist_sig_km": 0.58,
+          "dist_acumulada_km": 3.08
+        },
+        {
+          "numero": 6,
+          "nombre": "Alejandro Echavarría",
+          "municipio": "Medellín",
+          "latitud": 6.225,
+          "longitud": -75.543,
+          "dist_sig_km": 1.17,
+          "dist_acumulada_km": 4.25
+        },
+        {
+          "numero": 7,
+          "nombre": "Miraflores",
+          "municipio": "Medellín",
+          "latitud": 6.2285,
+          "longitud": -75.553,
+          "dist_sig_km": 1.45,
+          "dist_acumulada_km": 5.7
+        },
+        {
+          "numero": 8,
+          "nombre": "Loyola",
+          "municipio": "Medellín",
+          "latitud": 6.227,
+          "longitud": -75.54,
+          "dist_sig_km": 0.4,
+          "dist_acumulada_km": 6.1
+        },
+        {
+          "numero": 9,
+          "nombre": "Oriente",
+          "municipio": "Medellín",
+          "latitud": 6.229,
+          "longitud": -75.537,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 6.1
+        }
+      ]
+    },
+    {
+      "clave": "1",
+      "hoja": "L.1",
+      "nombre_completo": "Tipo: BRT  |  4 estaciones / paradas",
+      "tipo": "",
+      "total_estaciones": 4,
+      "longitud_total_km": 15.13,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "U. de M.",
+          "municipio": "Medellín",
+          "latitud": 6.213,
+          "longitud": -75.625,
+          "dist_sig_km": 0.4,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "La Palma",
+          "municipio": "Medellín",
+          "latitud": 6.21,
+          "longitud": -75.627,
+          "dist_sig_km": 5.63,
+          "dist_acumulada_km": 6.03
+        },
+        {
+          "numero": 3,
+          "nombre": "Industriales",
+          "municipio": "Medellín",
+          "latitud": 6.2237,
+          "longitud": -75.578,
+          "dist_sig_km": 9.1,
+          "dist_acumulada_km": 15.13
+        },
+        {
+          "numero": 4,
+          "nombre": "Parque Aranjuez",
+          "municipio": "Medellín",
+          "latitud": 6.301,
+          "longitud": -75.551,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 15.13
+        }
+      ]
+    },
+    {
+      "clave": "2",
+      "hoja": "L.2",
+      "nombre_completo": "Tipo: BRT  |  6 estaciones / paradas",
+      "tipo": "",
+      "total_estaciones": 6,
+      "longitud_total_km": 14.12,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "U. de M.",
+          "municipio": "Medellín",
+          "latitud": 6.213,
+          "longitud": -75.625,
+          "dist_sig_km": 7.65,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "Catedral",
+          "municipio": "Medellín",
+          "latitud": 6.249,
+          "longitud": -75.566,
+          "dist_sig_km": 0.31,
+          "dist_acumulada_km": 7.96
+        },
+        {
+          "numero": 3,
+          "nombre": "La Playa",
+          "municipio": "Medellín",
+          "latitud": 6.251,
+          "longitud": -75.564,
+          "dist_sig_km": 0.42,
+          "dist_acumulada_km": 8.38
+        },
+        {
+          "numero": 4,
+          "nombre": "San José",
+          "municipio": "Medellín",
+          "latitud": 6.2525,
+          "longitud": -75.5605,
+          "dist_sig_km": 0.54,
+          "dist_acumulada_km": 8.92
+        },
+        {
+          "numero": 5,
+          "nombre": "Pabellón del Agua EPM",
+          "municipio": "Medellín",
+          "latitud": 6.2545,
+          "longitud": -75.556,
+          "dist_sig_km": 5.2,
+          "dist_acumulada_km": 14.12
+        },
+        {
+          "numero": 6,
+          "nombre": "Parque Aranjuez",
+          "municipio": "Medellín",
+          "latitud": 6.301,
+          "longitud": -75.551,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 14.12
+        }
+      ]
+    },
+    {
+      "clave": "E",
+      "hoja": "L.E",
+      "nombre_completo": "Tipo: Metro ligero  |  17 estaciones / paradas",
+      "tipo": "",
+      "total_estaciones": 17,
+      "longitud_total_km": 17.98,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "Caribe",
+          "municipio": "Medellín",
+          "latitud": 6.2779,
+          "longitud": -75.564,
+          "dist_sig_km": 3.22,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "Córdoba",
+          "municipio": "Medellín",
+          "latitud": 6.27,
+          "longitud": -75.592,
+          "dist_sig_km": 0.91,
+          "dist_acumulada_km": 3.22
+        },
+        {
+          "numero": 3,
+          "nombre": "Ciudadela Educativa",
+          "municipio": "Medellín",
+          "latitud": 6.2635,
+          "longitud": -75.597,
+          "dist_sig_km": 0.82,
+          "dist_acumulada_km": 4.13
+        },
+        {
+          "numero": 4,
+          "nombre": "Pedro Nel Gómez",
+          "municipio": "Medellín",
+          "latitud": 6.257,
+          "longitud": -75.6005,
+          "dist_sig_km": 0.8,
+          "dist_acumulada_km": 4.95
+        },
+        {
+          "numero": 5,
+          "nombre": "Colombia",
+          "municipio": "Medellín",
+          "latitud": 6.25,
+          "longitud": -75.602,
+          "dist_sig_km": 0.78,
+          "dist_acumulada_km": 5.75
+        },
+        {
+          "numero": 6,
+          "nombre": "Floresta",
+          "municipio": "Medellín",
+          "latitud": 6.2457,
+          "longitud": -75.5964,
+          "dist_sig_km": 1.0,
+          "dist_acumulada_km": 6.53
+        },
+        {
+          "numero": 7,
+          "nombre": "Los Pinos",
+          "municipio": "Medellín",
+          "latitud": 6.239,
+          "longitud": -75.6025,
+          "dist_sig_km": 0.9,
+          "dist_acumulada_km": 7.53
+        },
+        {
+          "numero": 8,
+          "nombre": "San Juan",
+          "municipio": "Medellín",
+          "latitud": 6.232,
+          "longitud": -75.6065,
+          "dist_sig_km": 0.85,
+          "dist_acumulada_km": 8.43
+        },
+        {
+          "numero": 9,
+          "nombre": "San Germán",
+          "municipio": "Medellín",
+          "latitud": 6.2255,
+          "longitud": -75.6105,
+          "dist_sig_km": 0.9,
+          "dist_acumulada_km": 9.28
+        },
+        {
+          "numero": 10,
+          "nombre": "Villa de Aburrá",
+          "municipio": "Medellín",
+          "latitud": 6.2185,
+          "longitud": -75.6145,
+          "dist_sig_km": 1.67,
+          "dist_acumulada_km": 10.18
+        },
+        {
+          "numero": 11,
+          "nombre": "La Palma",
+          "municipio": "Medellín",
+          "latitud": 6.21,
+          "longitud": -75.627,
+          "dist_sig_km": 0.56,
+          "dist_acumulada_km": 11.85
+        },
+        {
+          "numero": 12,
+          "nombre": "San Bernardo",
+          "municipio": "Medellín",
+          "latitud": 6.205,
+          "longitud": -75.627,
+          "dist_sig_km": 0.88,
+          "dist_acumulada_km": 12.41
+        },
+        {
+          "numero": 13,
+          "nombre": "La Mota",
+          "municipio": "Medellín",
+          "latitud": 6.2005,
+          "longitud": -75.6205,
+          "dist_sig_km": 0.87,
+          "dist_acumulada_km": 13.29
+        },
+        {
+          "numero": 14,
+          "nombre": "Loma de los Bernal",
+          "municipio": "Medellín",
+          "latitud": 6.198,
+          "longitud": -75.613,
+          "dist_sig_km": 0.9,
+          "dist_acumulada_km": 14.16
+        },
+        {
+          "numero": 15,
+          "nombre": "Cristo Rey",
+          "municipio": "Medellín",
+          "latitud": 6.1965,
+          "longitud": -75.605,
+          "dist_sig_km": 1.22,
+          "dist_acumulada_km": 15.06
+        },
+        {
+          "numero": 16,
+          "nombre": "Guayabal",
+          "municipio": "Medellín",
+          "latitud": 6.1953,
+          "longitud": -75.594,
+          "dist_sig_km": 1.7,
+          "dist_acumulada_km": 16.28
+        },
+        {
+          "numero": 17,
+          "nombre": "Aguacatala",
+          "municipio": "Medellín",
+          "latitud": 6.1991,
+          "longitud": -75.5791,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 17.98
+        }
+      ]
+    }
+  ]
+}
