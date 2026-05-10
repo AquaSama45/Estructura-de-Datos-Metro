@@ -1,1 +1,114 @@
 import json
+import unicodedata
+import networkx as nx
+
+# ── Normalización y aliases ──────────────────────────────────────────────────
+
+ARTICULOS = {"el", "la", "los", "las", "de", "del", "un", "una"}
+
+def normalizar(texto: str) -> str:
+    """Minúsculas, sin tildes, sin espacios laterales."""
+    texto = texto.lower().strip()
+    texto = unicodedata.normalize("NFD", texto)
+    return "".join(c for c in texto if unicodedata.category(c) != "Mn")
+
+def generar_aliases(nombre: str) -> list[str]:
+    """
+    Devuelve todas las variantes normalizadas de un nombre de estación:
+      - Con espacios            → "la estrella"
+      - Sin espacios            → "laestrella"
+      - Sin artículo inicial    → "estrella"
+      - Sin artículo ni espacio → "estrella"  (igual al anterior en este caso)
+    Solo se eliminan artículos/preposiciones al inicio (el, la, los, las, de, del…).
+    Palabras como 'san', 'santa', 'parque'… NO se eliminan.
+    """
+    base = normalizar(nombre)           # "la estrella"
+    sin_espacios = base.replace(" ", "") # "laestrella"
+
+    alias = {base, sin_espacios}
+
+    # Quitar artículo inicial si lo hay
+    palabras = base.split()
+    if len(palabras) > 1 and palabras[0] in ARTICULOS:
+        sin_art = " ".join(palabras[1:])        # "estrella"
+        alias.add(sin_art)
+        alias.add(sin_art.replace(" ", ""))     # por si quedan varias palabras
+
+    return list(alias)
+
+# ── 1. Cargar el JSON ────────────────────────────────────────────────────────
+
+JSON_PATH = "Metro_Medellin_SITVA.json"
+
+with open(JSON_PATH, encoding="utf-8") as f:
+    data = json.load(f)
+
+print(f"Sistema : {data['sistema']}")
+print(f"Fuente  : {data['fuente']}")
+print(f"Líneas  : {len(data['lineas'])}\n")
+
+# ── 2. Construir el grafo ────────────────────────────────────────────────────
+
+G = nx.Graph()
+indice: dict[str, str] = {}   # alias_normalizado → nombre real en el grafo
+
+for linea in data["lineas"]:
+    clave      = linea["clave"]
+    tipo       = linea["tipo"]
+    estaciones = linea["estaciones"]
+
+    for est in estaciones:
+        nombre = est["nombre"]
+
+        if nombre not in G:
+            G.add_node(
+                nombre,
+                municipio = est["municipio"],
+                lat       = est["latitud"],
+                lon       = est["longitud"],
+                lineas    = [],
+            )
+            # Registrar todos los alias de este nodo
+            for alias in generar_aliases(nombre):
+                indice.setdefault(alias, nombre)   # primero en llegar gana
+
+        if clave not in G.nodes[nombre]["lineas"]:
+            G.nodes[nombre]["lineas"].append(clave)
+
+    for i in range(len(estaciones) - 1):
+        origen  = estaciones[i]["nombre"]
+        destino = estaciones[i + 1]["nombre"]
+        dist_km = estaciones[i]["dist_sig_km"]
+
+        if dist_km is not None:
+            G.add_edge(origen, destino, weight=dist_km, linea=clave, tipo=tipo)
+
+# ── 3. Función de búsqueda tolerante ────────────────────────────────────────
+
+def buscar_nodo(entrada: str) -> str | None:
+    """Devuelve el nombre real del nodo o None si no existe."""
+    return indice.get(normalizar(entrada).replace(" ", "")) \
+        or indice.get(normalizar(entrada))
+
+# ── 4. Consulta interactiva ──────────────────────────────────────────────────
+
+print("── Ruta más corta (Dijkstra por km) ────────────────────────────────────")
+origen_input  = input("Origen  : ")
+destino_input = input("Destino : ")
+
+origen_nodo  = buscar_nodo(origen_input)
+destino_nodo = buscar_nodo(destino_input)
+
+if origen_nodo is None:
+    print(f"  ✗ Estación no encontrada: '{origen_input}'")
+elif destino_nodo is None:
+    print(f"  ✗ Estación no encontrada: '{destino_input}'")
+else:
+    try:
+        ruta = nx.shortest_path(G, origen_nodo, destino_nodo, weight="weight")
+        dist = nx.shortest_path_length(G, origen_nodo, destino_nodo, weight="weight")
+        print(f"  {origen_nodo} → {destino_nodo}")
+        print(f"  Distancia : {dist:.2f} km")
+        print(f"  Paradas   : {' → '.join(ruta)}")
+    except nx.NetworkXNoPath:
+        print(f"  ✗ No hay camino entre {origen_nodo} y {destino_nodo}")
