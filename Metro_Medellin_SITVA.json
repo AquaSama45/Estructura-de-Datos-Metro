@@ -515,97 +515,97 @@
         }
       ]
     },
+  {
+  "clave": "T",
+  "hoja": "L.T",
+  "nombre_completo": "Tipo: Tranvía  |  9 estaciones / paradas",
+  "tipo": "",
+  "total_estaciones": 9,
+  "longitud_total_km": 6.1,
+  "estaciones": [
     {
-      "clave": "T",
-      "hoja": "L.T",
-      "nombre_completo": "Tipo: Tranvía  |  9 estaciones / paradas",
-      "tipo": "",
-      "total_estaciones": 9,
-      "longitud_total_km": 6.1,
-      "estaciones": [
-        {
-          "numero": 1,
-          "nombre": "San Antonio",
-          "municipio": "Medellín",
-          "latitud": 6.2407,
-          "longitud": -75.5653,
-          "dist_sig_km": 0.82,
-          "dist_acumulada_km": 0.0
-        },
-        {
-          "numero": 2,
-          "nombre": "San José",
-          "municipio": "Medellín",
-          "latitud": 6.2355,
-          "longitud": -75.56,
-          "dist_sig_km": 0.67,
-          "dist_acumulada_km": 1.49
-        },
-        {
-          "numero": 3,
-          "nombre": "Perpetuo Socorro",
-          "municipio": "Medellín",
-          "latitud": 6.231,
-          "longitud": -75.556,
-          "dist_sig_km": 0.52,
-          "dist_acumulada_km": 2.01
-        },
-        {
-          "numero": 4,
-          "nombre": "Bicentenario",
-          "municipio": "Medellín",
-          "latitud": 6.2285,
-          "longitud": -75.552,
-          "dist_sig_km": 0.49,
-          "dist_acumulada_km": 2.5
-        },
-        {
-          "numero": 5,
-          "nombre": "Buenos Aires",
-          "municipio": "Medellín",
-          "latitud": 6.2265,
-          "longitud": -75.548,
-          "dist_sig_km": 0.58,
-          "dist_acumulada_km": 3.08
-        },
-        {
-          "numero": 6,
-          "nombre": "Alejandro Echavarría",
-          "municipio": "Medellín",
-          "latitud": 6.225,
-          "longitud": -75.543,
-          "dist_sig_km": 1.17,
-          "dist_acumulada_km": 4.25
-        },
-        {
-          "numero": 7,
-          "nombre": "Miraflores",
-          "municipio": "Medellín",
-          "latitud": 6.2285,
-          "longitud": -75.553,
-          "dist_sig_km": 1.45,
-          "dist_acumulada_km": 5.7
-        },
-        {
-          "numero": 8,
-          "nombre": "Loyola",
-          "municipio": "Medellín",
-          "latitud": 6.227,
-          "longitud": -75.54,
-          "dist_sig_km": 0.4,
-          "dist_acumulada_km": 6.1
-        },
-        {
-          "numero": 9,
-          "nombre": "Oriente",
-          "municipio": "Medellín",
-          "latitud": 6.229,
-          "longitud": -75.537,
-          "dist_sig_km": null,
-          "dist_acumulada_km": 6.1
-        }
-      ]
+      "numero": 1,
+      "nombre": "San Antonio",
+      "municipio": "Medellín",
+      "latitud": 6.2407,
+      "longitud": -75.5653,
+      "dist_sig_km": 0.82,
+      "dist_acumulada_km": 0.0
     },
+    {
+      "numero": 2,
+      "nombre": "San José",
+      "municipio": "Medellín",
+      "latitud": 6.2355,
+      "longitud": -75.5600,
+      "dist_sig_km": 0.67,
+      "dist_acumulada_km": 1.49
+    },
+    {
+      "numero": 3,
+      "nombre": "Pabellón del Agua EPM",
+      "municipio": "Medellín",
+      "latitud": 6.2310,
+      "longitud": -75.5560,
+      "dist_sig_km": 0.52,
+      "dist_acumulada_km": 2.01
+    },
+    {
+      "numero": 4,
+      "nombre": "Bicentenario",
+      "municipio": "Medellín",
+      "latitud": 6.2285,
+      "longitud": -75.5520,
+      "dist_sig_km": 0.40,
+      "dist_acumulada_km": 2.50
+    },
+    {
+      "numero": 5,
+      "nombre": "Buenos Aires",
+      "municipio": "Medellín",
+      "latitud": 6.2268,
+      "longitud": -75.5483,
+      "dist_sig_km": 0.42,
+      "dist_acumulada_km": 2.90
+    },
+    {
+      "numero": 6,
+      "nombre": "Miraflores",
+      "municipio": "Medellín",
+      "latitud": 6.2258,
+      "longitud": -75.5453,
+      "dist_sig_km": 0.45,
+      "dist_acumulada_km": 3.32
+    },
+    {
+      "numero": 7,
+      "nombre": "Loyola",
+      "municipio": "Medellín",
+      "latitud": 6.2270,
+      "longitud": -75.5420,
+      "dist_sig_km": 0.55,
+      "dist_acumulada_km": 3.77
+    },
+    {
+      "numero": 8,
+      "nombre": "Alejandro Echavarría",
+      "municipio": "Medellín",
+      "latitud": 6.2250,
+      "longitud": -75.5390,
+      "dist_sig_km": 1.17,
+      "dist_acumulada_km": 4.94
+    },
+    {
+      "numero": 9,
+      "nombre": "Oriente",
+      "municipio": "Medellín",
+      "latitud": 6.2290,
+      "longitud": -75.5370,
+      "dist_sig_km": null,
+      "dist_acumulada_km": 6.1
+    }
+  ]
+},
     {
       "clave": "1",
       "hoja": "L.1",
