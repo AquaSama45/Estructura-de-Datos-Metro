@@ -609,52 +609,6 @@
     {
       "clave": "1",
       "hoja": "L.1",
-      "nombre_completo": "Tipo: BRT  |  4 estaciones / paradas",
-      "tipo": "",
-      "total_estaciones": 4,
-      "longitud_total_km": 15.13,
-      "estaciones": [
-        {
-          "numero": 1,
-          "nombre": "U. de M.",
-          "municipio": "Medellín",
-          "latitud": 6.213,
-          "longitud": -75.625,
-          "dist_sig_km": 0.4,
-          "dist_acumulada_km": 0.0
-        },
-        {
-          "numero": 2,
-          "nombre": "La Palma",
-          "municipio": "Medellín",
-          "latitud": 6.21,
-          "longitud": -75.627,
-          "dist_sig_km": 5.63,
-          "dist_acumulada_km": 6.03
-        },
-        {
-          "numero": 3,
-          "nombre": "Industriales",
-          "municipio": "Medellín",
-          "latitud": 6.2237,
-          "longitud": -75.578,
-          "dist_sig_km": 9.1,
-          "dist_acumulada_km": 15.13
-        },
-        {
-          "numero": 4,
-          "nombre": "Parque Aranjuez",
-          "municipio": "Medellín",
-          "latitud": 6.301,
-          "longitud": -75.551,
-          "dist_sig_km": null,
-          "dist_acumulada_km": 15.13
-        }
-      ]
-    },
-    {
-      "clave": "1",
-      "hoja": "L.1",
       "nombre_completo": "Línea 1 — BRT (U. de M. <->Parque Aranjuez, Av. del Ferrocarril)",
       "tipo": "BRT",
       "color": "#388E3C",
@@ -786,7 +740,7 @@
         },
         {
           "numero": 13,
-          "nombre": "Ruta N / U. de A.",
+          "nombre": "Ruta N U. de A.",
           "municipio": "Medellín",
           "latitud": 6.274,
           "longitud": -75.57,
@@ -796,7 +750,7 @@
         },
         {
           "numero": 14,
-          "nombre": "Tricentenario",
+          "nombre": "Hospital",
           "municipio": "Medellín",
           "latitud": 6.287,
           "longitud": -75.562,
@@ -807,14 +761,66 @@
           ]
         },
         {
-          "numero": 15,
+          "numero": 16,
+          "nombre": "Palos Verdes",
+          "municipio": "Medellín",
+          "latitud": 6.26,
+          "longitud": -75.559,
+          "dist_sig_km": 0.55,
+          "dist_acumulada_km": 15.88,
+          "conexiones": []
+        },
+        {
+          "numero": 17,
+          "nombre": "Gardel",
+          "municipio": "Medellín",
+          "latitud": 6.264,
+          "longitud": -75.556,
+          "dist_sig_km": 0.55,
+          "dist_acumulada_km": 16.43,
+          "conexiones": []
+        },
+        {
+          "numero": 18,
+          "nombre": "Manrique",
+          "municipio": "Medellín",
+          "latitud": 6.268,
+          "longitud": -75.553,
+          "dist_sig_km": 0.55,
+          "dist_acumulada_km": 16.98,
+          "conexiones": []
+        },
+        {
+          "numero": 19,
+          "nombre": "Las Esmeraldas",
+          "municipio": "Medellín",
+          "latitud": 6.272,
+          "longitud": -75.55,
+          "dist_sig_km": 0.55,
+          "dist_acumulada_km": 17.53,
+          "conexiones": []
+        },
+        {
+          "numero": 20,
+          "nombre": "Berlín",
+          "municipio": "Medellín",
+          "latitud": 6.276,
+          "longitud": -75.547,
+          "dist_sig_km": 2.81,
+          "dist_acumulada_km": 18.08,
+          "conexiones": []
+        },
+        {
+          "numero": 21,
           "nombre": "Parque Aranjuez",
           "municipio": "Medellín",
           "latitud": 6.301,
           "longitud": -75.551,
           "dist_sig_km": null,
-          "dist_acumulada_km": 22.9,
-          "conexiones": []
+          "dist_acumulada_km": 20.89,
+          "conexiones": [
+            "1"
+          ]
         }
       ]
     },
@@ -903,12 +909,10 @@
           "nombre": "Industriales",
           "municipio": "Medellín",
           "latitud": 6.2237,
-          "longitud": -75.578,  
-          "dist_sig_km": 1.13,
+          "longitud": -75.578,
+          "dist_sig_km": 3.92,
           "dist_acumulada_km": 8.46,
-          "conexiones": [
-            "A"
-          ]
+          "conexiones": []
         },
         {
           "numero": 9,
@@ -972,24 +976,12 @@
           "municipio": "Medellín",
           "latitud": 6.249,
           "longitud": -75.566,
-          "dist_sig_km": 0.61,
+          "dist_sig_km": 2.0,
           "dist_acumulada_km": 14.43,
           "conexiones": []
         },
         {
           "numero": 15,
-          "nombre": "Prado",
-          "municipio": "Medellín",
-          "latitud": 6.2537,
-          "longitud": -75.5632,
-          "dist_sig_km": 0.84,
-          "dist_acumulada_km": 15.04,
-          "conexiones": [
-            "A"
-          ]
-        },
-        {
-          "numero": 16,
           "nombre": "Palos Verdes",
           "municipio": "Medellín",
           "latitud": 6.26,
@@ -999,7 +991,7 @@
           "conexiones": []
         },
         {
-          "numero": 17,
+          "numero": 16,
           "nombre": "Gardel",
           "municipio": "Medellín",
           "latitud": 6.264,
@@ -1009,7 +1001,7 @@
           "conexiones": []
         },
         {
-          "numero": 18,
+          "numero": 17,
           "nombre": "Manrique",
           "municipio": "Medellín",
           "latitud": 6.268,
@@ -1019,7 +1011,7 @@
           "conexiones": []
         },
         {
-          "numero": 19,
+          "numero": 18,
           "nombre": "Las Esmeraldas",
           "municipio": "Medellín",
           "latitud": 6.272,
@@ -1029,7 +1021,7 @@
           "conexiones": []
         },
         {
-          "numero": 20,
+          "numero": 19,
           "nombre": "Berlín",
           "municipio": "Medellín",
           "latitud": 6.276,
@@ -1039,7 +1031,7 @@
           "conexiones": []
         },
         {
-          "numero": 21,
+          "numero": 20,
           "nombre": "Parque Aranjuez",
           "municipio": "Medellín",
           "latitud": 6.301,
