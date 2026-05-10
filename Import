@@ -6,6 +6,10 @@ import networkx as nx
 
 ARTICULOS = {"el", "la", "los", "las", "de", "del", "un", "una"}
 
+ALIAS_MANUALES: dict[str, list[str]] = {
+    "Pabellón del Agua EPM": ["Pabellón"],
+}
+
 def normalizar(texto: str) -> str:
     """Minúsculas, sin tildes, sin espacios laterales."""
     texto = texto.lower().strip()
