@@ -2,7 +2,7 @@ import json
 import unicodedata
 import networkx as nx
 
-# ── Normalización y aliases ──────────────────────────────────────────────────
+# Normalización y aliases
 
 ARTICULOS = {"el", "la", "los", "las", "de", "del", "un", "una"}
 
@@ -40,7 +40,7 @@ def generar_aliases(nombre: str) -> list[str]:
 
     return list(alias)
 
-# ── 1. Cargar el JSON ────────────────────────────────────────────────────────
+# Cargar el JSON
 
 JSON_PATH = "Metro_Medellin_SITVA.json"
 
@@ -51,7 +51,7 @@ print(f"Sistema : {data['sistema']}")
 print(f"Fuente  : {data['fuente']}")
 print(f"Líneas  : {len(data['lineas'])}\n")
 
-# ── 2. Construir el grafo ────────────────────────────────────────────────────
+# Construir el grafo
 
 G = nx.Graph()
 indice: dict[str, str] = {}   # alias_normalizado → nombre real en el grafo
@@ -87,14 +87,14 @@ for linea in data["lineas"]:
         if dist_km is not None:
             G.add_edge(origen, destino, weight=dist_km, linea=clave, tipo=tipo)
 
-# ── 3. Función de búsqueda tolerante ────────────────────────────────────────
+# Función de búsqueda 
 
 def buscar_nodo(entrada: str) -> str | None:
     """Devuelve el nombre real del nodo o None si no existe."""
     return indice.get(normalizar(entrada).replace(" ", "")) \
         or indice.get(normalizar(entrada))
 
-# ── 4. Consulta interactiva ──────────────────────────────────────────────────
+# Consulta
 
 print("── Ruta más corta (Dijkstra por km) ────────────────────────────────────")
 origen_input  = input("Origen  : ")
