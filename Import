@@ -79,7 +79,7 @@ for linea in data["lineas"]:
                 indice.setdefault(alias, nombre)   # primero en llegar gana
 
              # Alias manuales para nombres específicos sin modificar el JSON
-                for alias in ALIAS_MANUALES.get(nombre, []):
+            for alias in ALIAS_MANUALES.get(nombre, []):
                 alias_norm = normalizar(alias)
                 indice.setdefault(alias_norm.replace(" ", ""), nombre)
                 indice.setdefault(alias_norm, nombre)
