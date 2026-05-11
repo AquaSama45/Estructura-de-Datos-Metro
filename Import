@@ -8,6 +8,8 @@ ARTICULOS = {"el", "la", "los", "las", "de", "del", "un", "una"}
 
 ALIAS_MANUALES: dict[str, list[str]] = {
     "Pabellón del Agua EPM": ["Pabellón"],
+    "Ciudadela Universitaria": ["Ciudadela"],
+    "U. de M.": ["udm"],
 }
 
 def normalizar(texto: str) -> str:
@@ -75,6 +77,12 @@ for linea in data["lineas"]:
             # Registrar todos los alias de este nodo
             for alias in generar_aliases(nombre):
                 indice.setdefault(alias, nombre)   # primero en llegar gana
+
+             # Alias manuales para nombres específicos sin modificar el JSON
+                for alias in ALIAS_MANUALES.get(nombre, []):
+                alias_norm = normalizar(alias)
+                indice.setdefault(alias_norm.replace(" ", ""), nombre)
+                indice.setdefault(alias_norm, nombre)
 
         if clave not in G.nodes[nombre]["lineas"]:
             G.nodes[nombre]["lineas"].append(clave)
