@@ -18,12 +18,18 @@
     --accent:   #C2432A;
     --accent2:  #1D6FB5;
     --green:    #2A7A4B;
-    --line-a:   #C2432A;
-    --line-b:   #1D6FB5;
-    --line-j:   #E8A020;
-    --line-k:   #2A7A4B;
-    --line-t:   #8B5CF6;
-    --line-m:   #D4467A;
+    --line-a:   #005496;
+    --line-b:   #F6821F;
+    --line-j:   #FDB913;
+    --line-k:   #ACD258;
+    --line-l:   #98671B;
+    --line-t:   #1D9D48;
+    --line-p:   #EB193A;
+    --line-h:   #DC3591;
+    --line-m:   #6E2C8D;
+    --line-1:   #007C88;
+    --line-2:   #60A9AF;
+    --line-o:   #EF7580;
     --tag-r:    1px;
   }
 
@@ -56,7 +62,7 @@
 
   .header-left h1 span {
     font-weight: 500;
-    color: var(--accent);
+    color: #65BC4B;
   }
 
   .header-left p {
@@ -411,7 +417,7 @@
     <h1>Metro <span>Medellín</span></h1>
     <p>SITVA — Sistema Integrado de Transporte</p>
   </div>
-  <span class="badge-nx">networkx / dijkstra</span>
+  <span class="badge-nx"> Johan David / Carlos Salazar</span>
 </header>
 
 <main>
@@ -459,10 +465,6 @@
         <span class="stat-label">Paradas</span>
         <span class="stat-value" id="stat-paradas">—</span>
       </div>
-      <div class="stat-cell">
-        <span class="stat-label">Algoritmo</span>
-        <span class="stat-value" style="font-size:0.85rem; font-family:'DM Mono',monospace; padding-top:4px; display:block;">Dijkstra</span>
-      </div>
     </div>
   </div>
 
@@ -472,6 +474,12 @@
     <div class="linea-pill"><div class="pill-dot" style="background:var(--line-b)"></div>Línea B</div>
     <div class="linea-pill"><div class="pill-dot" style="background:var(--line-j)"></div>Línea J</div>
     <div class="linea-pill"><div class="pill-dot" style="background:var(--line-k)"></div>Línea K</div>
+    <div class="linea-pill"><div class="pill-dot" style="background:var(--line-l)"></div>Línea L</div>
+    <div class="linea-pill"><div class="pill-dot" style="background:var(--line-h)"></div>Línea H</div>
+    <div class="linea-pill"><div class="pill-dot" style="background:var(--line-p)"></div>Línea P</div>
+    <div class="linea-pill"><div class="pill-dot" style="background:var(--line-1)"></div>Línea 1</div>
+    <div class="linea-pill"><div class="pill-dot" style="background:var(--line-2)"></div>Línea 2</div>
+    <div class="linea-pill"><div class="pill-dot" style="background:var(--line-o)"></div>Línea O</div>
     <div class="linea-pill"><div class="pill-dot" style="background:var(--line-t)"></div>Tranvía T</div>
     <div class="linea-pill"><div class="pill-dot" style="background:var(--line-m)"></div>Metro Plus M</div>
   </div>
@@ -480,7 +488,6 @@
 
 <footer>
   <p>Metro de Medellín · Visualizador de rutas</p>
-  <span class="algo-tag">nx.shortest_path(weight="weight")</span>
 </footer>
 
 <script>
@@ -581,10 +588,10 @@
   }
 
   const COLORES_LINEA = {
-    A: '#C2432A', B: '#1D6FB5', J: '#E8A020',
-    K: '#2A7A4B', T: '#8B5CF6', M: '#D4467A',
-    H: '#0EA5E9', L: '#F97316', P: '#14B8A6',
-    1: '#6366F1', 2: '#EC4899', O: '#84CC16',
+    A: '#005496', B: '#F6821F', J: '#FDB913',
+    K: '#ACD258', T: '#1D9D48', M: '#6E2C8D',
+    H: '#DC3591', L: '#98671B', P: '#ED1A3B',
+    1: '#007C88', 2: '#60A9AF', O: '#EF7580',
   };
 
   // buscarNodo: misma lógica que buscar_nodo() del Python
