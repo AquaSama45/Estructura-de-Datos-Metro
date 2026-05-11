@@ -484,10 +484,101 @@
 </footer>
 
 <script>
-  // ── Datos reales desde Metro_Medellin_SITVA.json ──────────────────
-  const GRAFO  = {"Niquía":{"Bello":1.6},"Bello":{"Niquía":1.6,"Madera":1.61},"Madera":{"Bello":1.61,"Acevedo":1.63},"Acevedo":{"Madera":1.63,"Tricentenario":0.91,"Andalucía":0.95,"SENA":0.83},"Tricentenario":{"Acevedo":0.91,"Caribe":1.04},"Caribe":{"Tricentenario":1.04,"Universidad":1.05,"Universal":0.6},"Universidad":{"Caribe":1.05,"Hospital":0.87},"Hospital":{"Universidad":0.87,"Prado":0.78,"Ruta N U. de A.":1.69,"Palos Verdes":1.98},"Prado":{"Hospital":0.78,"Parque Berrío":0.78},"Parque Berrío":{"Prado":0.78,"San Antonio":0.68},"San Antonio":{"Parque Berrío":0.68,"Alpujarra":0.62,"Cisneros":0.61,"San José":0.82},"Alpujarra":{"San Antonio":0.62,"Exposiciones":0.84},"Exposiciones":{"Alpujarra":0.84,"Industriales":0.9},"Industriales":{"Exposiciones":0.9,"Poblado":1.55,"Nutibara":4.25,"Plaza Mayor":3.92,"Barrio Colombia":3.92},"Poblado":{"Industriales":1.55,"Aguacatala":1.19},"Aguacatala":{"Poblado":1.19,"Ayurá":1.22,"La Palma":4.9},"Ayurá":{"Aguacatala":1.22,"Envigado":1.49},"Envigado":{"Ayurá":1.49,"Itagüí":1.36},"Itagüí":{"Envigado":1.36,"Sabaneta":2.4},"Sabaneta":{"Itagüí":2.4,"La Estrella":1.34},"La Estrella":{"Sabaneta":1.34},"Cisneros":{"San Antonio":0.61,"Suramericana":0.92,"Plaza Mayor":2.45,"Minorista":2.89},"Suramericana":{"Cisneros":0.92,"Estadio":0.98},"Estadio":{"Suramericana":0.98,"Floresta":0.98},"Floresta":{"Estadio":0.98,"Santa Lucía":0.96,"Calasanz":0.7,"Los Pinos":0.6},"Santa Lucía":{"Floresta":0.96,"San Javier":0.87},"San Javier":{"Santa Lucía":0.87,"Juan XXIII":1.01},"Andalucía":{"Acevedo":0.95,"Popular":0.85},"Popular":{"Andalucía":0.85,"Santo Domingo":0.86},"Santo Domingo":{"Popular":0.86,"Arví":5.28},"Arví":{"Santo Domingo":5.28},"Juan XXIII":{"San Javier":1.01,"Vallejuelos":0.97},"Vallejuelos":{"Juan XXIII":0.97,"La Aurora":0.87},"La Aurora":{"Vallejuelos":0.87},"Oriente":{"Las Torres":0.7,"Alejandro Echavarría":1.17},"Las Torres":{"Oriente":0.7,"Villa Sierra":0.7},"Villa Sierra":{"Las Torres":0.7},"Miraflores":{"El Pinal":1.03,"Buenos Aires":0.42,"Loyola":0.45},"El Pinal":{"Miraflores":1.03,"Trece de Noviembre":0.93},"Trece de Noviembre":{"El Pinal":0.93},"SENA":{"Acevedo":0.83,"Doce de Octubre":0.91},"Doce de Octubre":{"SENA":0.91,"El Progreso":0.91},"El Progreso":{"Doce de Octubre":0.91},"San José":{"San Antonio":0.82,"Pabellón del Agua EPM":0.67,"Barrio Colón":1.89,"La Playa":0.42},"Pabellón del Agua EPM":{"San José":0.67,"Bicentenario":0.52},"Bicentenario":{"Pabellón del Agua EPM":0.52,"Buenos Aires":0.4},"Buenos Aires":{"Bicentenario":0.4,"Miraflores":0.42},"Loyola":{"Miraflores":0.45,"Alejandro Echavarría":0.55},"Alejandro Echavarría":{"Loyola":0.55,"Oriente":1.17},"U. de M.":{"Los Alpes":0.41},"Los Alpes":{"U. de M.":0.41,"La Palma":0.81},"La Palma":{"Los Alpes":0.81,"Parque Belén":1.39,"Villa de Aburrá":0.5,"Aguacatala":4.9},"Parque Belén":{"La Palma":1.39,"Rosales":0.5},"Rosales":{"Parque Belén":0.5,"Fátima":0.5},"Fátima":{"Rosales":0.5,"Nutibara":0.6},"Nutibara":{"Fátima":0.6,"Industriales":4.25},"Plaza Mayor":{"Industriales":3.92,"Cisneros":2.45},"Minorista":{"Cisneros":2.89,"Chagualo":0.71},"Chagualo":{"Minorista":0.71,"Ruta N U. de A.":0.8},"Ruta N U. de A.":{"Chagualo":0.8,"Hospital":1.69},"Palos Verdes":{"Hospital":1.98,"Gardel":0.55,"Catedral":2.0},"Gardel":{"Palos Verdes":0.55,"Manrique":0.55},"Manrique":{"Gardel":0.55,"Las Esmeraldas":0.55},"Las Esmeraldas":{"Manrique":0.55,"Berlín":0.55},"Berlín":{"Las Esmeraldas":0.55,"Parque Aranjuez":2.81},"Parque Aranjuez":{"Berlín":2.81},"Barrio Colombia":{"Industriales":3.92,"Perpetuo Socorro":1.55},"Perpetuo Socorro":{"Barrio Colombia":1.55,"Barrio Colón":0.67},"Barrio Colón":{"Perpetuo Socorro":0.67,"San José":1.89},"La Playa":{"San José":0.42,"Catedral":0.31},"Catedral":{"La Playa":0.31,"Palos Verdes":2.0},"Universal":{"Caribe":0.6,"Córdoba":0.5},"Córdoba":{"Universal":0.5,"Pilarica":0.6},"Pilarica":{"Córdoba":0.6,"Ciudadela Universitaria":0.5},"Ciudadela Universitaria":{"Pilarica":0.5,"Facultad de Minas":0.6},"Facultad de Minas":{"Ciudadela Universitaria":0.6,"Los Colores":0.4},"Los Colores":{"Facultad de Minas":0.4,"Calasanz":0.5},"Calasanz":{"Los Colores":0.5,"Floresta":0.7},"Los Pinos":{"Floresta":0.6,"Laureles":0.8},"Laureles":{"Los Pinos":0.8,"Santa Gema":0.7},"Santa Gema":{"Laureles":0.7,"Villa de Aburrá":0.6},"Villa de Aburrá":{"Santa Gema":0.6,"La Palma":0.5}};
-  const NODOS  = {"Niquía":{"municipio":"Bello","lat":6.3374,"lon":-75.5516,"lineas":["A"]},"Bello":{"municipio":"Bello","lat":6.3239,"lon":-75.5567,"lineas":["A"]},"Madera":{"municipio":"Bello","lat":6.3097,"lon":-75.5595,"lineas":["A"]},"Acevedo":{"municipio":"Medellín","lat":6.2951,"lon":-75.5607,"lineas":["A","K","P"]},"Tricentenario":{"municipio":"Medellín","lat":6.287,"lon":-75.562,"lineas":["A"]},"Caribe":{"municipio":"Medellín","lat":6.2779,"lon":-75.564,"lineas":["A","O"]},"Universidad":{"municipio":"Medellín","lat":6.2685,"lon":-75.5643,"lineas":["A"]},"Hospital":{"municipio":"Medellín","lat":6.2607,"lon":-75.5637,"lineas":["A","1"]},"Prado":{"municipio":"Medellín","lat":6.2537,"lon":-75.5632,"lineas":["A"]},"Parque Berrío":{"municipio":"Medellín","lat":6.2467,"lon":-75.564,"lineas":["A"]},"San Antonio":{"municipio":"Medellín","lat":6.2407,"lon":-75.5653,"lineas":["A","B","T"]},"Alpujarra":{"municipio":"Medellín","lat":6.2361,"lon":-75.5685,"lineas":["A"]},"Exposiciones":{"municipio":"Medellín","lat":6.2302,"lon":-75.5732,"lineas":["A"]},"Industriales":{"municipio":"Medellín","lat":6.2237,"lon":-75.578,"lineas":["A","1","2"]},"Poblado":{"municipio":"Medellín","lat":6.2098,"lon":-75.5782,"lineas":["A"]},"Aguacatala":{"municipio":"Medellín","lat":6.1991,"lon":-75.5791,"lineas":["A","O"]},"Ayurá":{"municipio":"Envigado","lat":6.1882,"lon":-75.5778,"lineas":["A"]},"Envigado":{"municipio":"Itagüí","lat":6.1756,"lon":-75.5825,"lineas":["A"]},"Itagüí":{"municipio":"Itagüí","lat":6.165,"lon":-75.5887,"lineas":["A"]},"Sabaneta":{"municipio":"Sabaneta","lat":6.1523,"lon":-75.6062,"lineas":["A"]},"La Estrella":{"municipio":"Sabaneta","lat":6.1425,"lon":-75.6133,"lineas":["A"]},"Cisneros":{"municipio":"Medellín","lat":6.2422,"lon":-75.5706,"lineas":["B","1"]},"Suramericana":{"municipio":"Medellín","lat":6.2438,"lon":-75.5788,"lineas":["B"]},"Estadio":{"municipio":"Medellín","lat":6.2449,"lon":-75.5876,"lineas":["B"]},"Floresta":{"municipio":"Medellín","lat":6.2457,"lon":-75.5964,"lineas":["B","O"]},"Santa Lucía":{"municipio":"Medellín","lat":6.2447,"lon":-75.605,"lineas":["B"]},"San Javier":{"municipio":"Medellín","lat":6.2435,"lon":-75.6128,"lineas":["B","J"]},"Andalucía":{"municipio":"Medellín","lat":6.2983,"lon":-75.5527,"lineas":["K"]},"Popular":{"municipio":"Medellín","lat":6.301,"lon":-75.5455,"lineas":["K"]},"Santo Domingo":{"municipio":"Medellín","lat":6.304,"lon":-75.5383,"lineas":["K","L"]},"Arví":{"municipio":"Corregimiento Santa Elena","lat":6.319,"lon":-75.493,"lineas":["L"]},"Juan XXIII":{"municipio":"Medellín","lat":6.2513,"lon":-75.6174,"lineas":["J"]},"Vallejuelos":{"municipio":"Medellín","lat":6.259,"lon":-75.6215,"lineas":["J"]},"La Aurora":{"municipio":"Medellín","lat":6.266,"lon":-75.625,"lineas":["J"]},"Oriente":{"municipio":"Medellín","lat":6.229,"lon":-75.537,"lineas":["H","T"]},"Las Torres":{"municipio":"Medellín","lat":6.231,"lon":-75.531,"lineas":["H"]},"Villa Sierra":{"municipio":"Medellín","lat":6.233,"lon":-75.525,"lineas":["H"]},"Miraflores":{"municipio":"Medellín","lat":6.2285,"lon":-75.553,"lineas":["M","T"]},"El Pinal":{"municipio":"Medellín","lat":6.231,"lon":-75.544,"lineas":["M"]},"Trece de Noviembre":{"municipio":"Medellín","lat":6.2335,"lon":-75.536,"lineas":["M"]},"SENA":{"municipio":"Medellín","lat":6.297,"lon":-75.568,"lineas":["P"]},"Doce de Octubre":{"municipio":"Medellín","lat":6.299,"lon":-75.576,"lineas":["P"]},"El Progreso":{"municipio":"Medellín","lat":6.301,"lon":-75.584,"lineas":["P"]},"San José":{"municipio":"Medellín","lat":6.2355,"lon":-75.56,"lineas":["T","2"]},"Pabellón del Agua EPM":{"municipio":"Medellín","lat":6.231,"lon":-75.556,"lineas":["T"]},"Bicentenario":{"municipio":"Medellín","lat":6.2285,"lon":-75.552,"lineas":["T"]},"Buenos Aires":{"municipio":"Medellín","lat":6.2268,"lon":-75.5483,"lineas":["T"]},"Loyola":{"municipio":"Medellín","lat":6.227,"lon":-75.542,"lineas":["T"]},"Alejandro Echavarría":{"municipio":"Medellín","lat":6.225,"lon":-75.539,"lineas":["T"]},"U. de M.":{"municipio":"Medellín","lat":6.213,"lon":-75.625,"lineas":["1","2"]},"Los Alpes":{"municipio":"Medellín","lat":6.216,"lon":-75.6228,"lineas":["1","2"]},"La Palma":{"municipio":"Medellín","lat":6.21,"lon":-75.627,"lineas":["1","2","O"]},"Parque Belén":{"municipio":"Medellín","lat":6.221,"lon":-75.621,"lineas":["1","2"]},"Rosales":{"municipio":"Medellín","lat":6.225,"lon":-75.619,"lineas":["1","2"]},"Fátima":{"municipio":"Medellín","lat":6.229,"lon":-75.617,"lineas":["1","2"]},"Nutibara":{"municipio":"Medellín","lat":6.234,"lon":-75.615,"lineas":["1","2"]},"Plaza Mayor":{"municipio":"Medellín","lat":6.258,"lon":-75.586,"lineas":["1"]},"Minorista":{"municipio":"Medellín","lat":6.266,"lon":-75.581,"lineas":["1"]},"Chagualo":{"municipio":"Medellín","lat":6.27,"lon":-75.576,"lineas":["1"]},"Ruta N U. de A.":{"municipio":"Medellín","lat":6.274,"lon":-75.57,"lineas":["1"]},"Palos Verdes":{"municipio":"Medellín","lat":6.26,"lon":-75.559,"lineas":["1","2"]},"Gardel":{"municipio":"Medellín","lat":6.264,"lon":-75.556,"lineas":["1","2"]},"Manrique":{"municipio":"Medellín","lat":6.268,"lon":-75.553,"lineas":["1","2"]},"Las Esmeraldas":{"municipio":"Medellín","lat":6.272,"lon":-75.55,"lineas":["1","2"]},"Berlín":{"municipio":"Medellín","lat":6.276,"lon":-75.547,"lineas":["1","2"]},"Parque Aranjuez":{"municipio":"Medellín","lat":6.301,"lon":-75.551,"lineas":["1","2"]},"Barrio Colombia":{"municipio":"Medellín","lat":6.23,"lon":-75.57,"lineas":["2"]},"Perpetuo Socorro":{"municipio":"Medellín","lat":6.231,"lon":-75.556,"lineas":["2"]},"Barrio Colón":{"municipio":"Medellín","lat":6.2355,"lon":-75.56,"lineas":["2"]},"La Playa":{"municipio":"Medellín","lat":6.251,"lon":-75.564,"lineas":["2"]},"Catedral":{"municipio":"Medellín","lat":6.249,"lon":-75.566,"lineas":["2"]},"Universal":{"municipio":"Medellín","lat":6.271,"lon":-75.579,"lineas":["O"]},"Córdoba":{"municipio":"Medellín","lat":6.269,"lon":-75.582,"lineas":["O"]},"Pilarica":{"municipio":"Medellín","lat":6.266,"lon":-75.585,"lineas":["O"]},"Ciudadela Universitaria":{"municipio":"Medellín","lat":6.264,"lon":-75.588,"lineas":["O"]},"Facultad de Minas":{"municipio":"Medellín","lat":6.261,"lon":-75.591,"lineas":["O"]},"Los Colores":{"municipio":"Medellín","lat":6.258,"lon":-75.593,"lineas":["O"]},"Calasanz":{"municipio":"Medellín","lat":6.254,"lon":-75.596,"lineas":["O"]},"Los Pinos":{"municipio":"Medellín","lat":6.245,"lon":-75.597,"lineas":["O"]},"Laureles":{"municipio":"Medellín","lat":6.239,"lon":-75.597,"lineas":["O"]},"Santa Gema":{"municipio":"Medellín","lat":6.235,"lon":-75.6,"lineas":["O"]},"Villa de Aburrá":{"municipio":"Medellín","lat":6.231,"lon":-75.602,"lineas":["O"]}};
-  const INDICE = {"niquia":"Niquía","bello":"Bello","madera":"Madera","acevedo":"Acevedo","tricentenario":"Tricentenario","caribe":"Caribe","universidad":"Universidad","hospital":"Hospital","prado":"Prado","parqueberrio":"Parque Berrío","parque berrio":"Parque Berrío","sanantonio":"San Antonio","san antonio":"San Antonio","alpujarra":"Alpujarra","exposiciones":"Exposiciones","industriales":"Industriales","poblado":"Poblado","aguacatala":"Aguacatala","ayura":"Ayurá","envigado":"Envigado","itagui":"Itagüí","sabaneta":"Sabaneta","laestrella":"La Estrella","estrella":"La Estrella","la estrella":"La Estrella","cisneros":"Cisneros","suramericana":"Suramericana","estadio":"Estadio","floresta":"Floresta","santalucia":"Santa Lucía","santa lucia":"Santa Lucía","san javier":"San Javier","sanjavier":"San Javier","andalucia":"Andalucía","popular":"Popular","santo domingo":"Santo Domingo","santodomingo":"Santo Domingo","arvi":"Arví","juan xxiii":"Juan XXIII","juanxxiii":"Juan XXIII","vallejuelos":"Vallejuelos","aurora":"La Aurora","laaurora":"La Aurora","la aurora":"La Aurora","oriente":"Oriente","torres":"Las Torres","lastorres":"Las Torres","las torres":"Las Torres","villa sierra":"Villa Sierra","villasierra":"Villa Sierra","miraflores":"Miraflores","pinal":"El Pinal","elpinal":"El Pinal","el pinal":"El Pinal","trecedenoviembre":"Trece de Noviembre","trece de noviembre":"Trece de Noviembre","sena":"SENA","docedeoctubre":"Doce de Octubre","doce de octubre":"Doce de Octubre","el progreso":"El Progreso","elprogreso":"El Progreso","progreso":"El Progreso","san jose":"San José","sanjose":"San José","pabellon del agua epm":"Pabellón del Agua EPM","pabellondelaguaepm":"Pabellón del Agua EPM","bicentenario":"Bicentenario","buenos aires":"Buenos Aires","buenosaires":"Buenos Aires","loyola":"Loyola","alejandro echavarria":"Alejandro Echavarría","alejandroechavarria":"Alejandro Echavarría","u. de m.":"U. de M.","u.dem.":"U. de M.","alpes":"Los Alpes","losalpes":"Los Alpes","los alpes":"Los Alpes","palma":"La Palma","la palma":"La Palma","lapalma":"La Palma","parque belen":"Parque Belén","parquebelen":"Parque Belén","rosales":"Rosales","fatima":"Fátima","nutibara":"Nutibara","plaza mayor":"Plaza Mayor","plazamayor":"Plaza Mayor","minorista":"Minorista","chagualo":"Chagualo","rutanu.dea.":"Ruta N U. de A.","ruta n u. de a.":"Ruta N U. de A.","palosverdes":"Palos Verdes","palos verdes":"Palos Verdes","gardel":"Gardel","manrique":"Manrique","esmeraldas":"Las Esmeraldas","lasesmeraldas":"Las Esmeraldas","las esmeraldas":"Las Esmeraldas","berlin":"Berlín","parque aranjuez":"Parque Aranjuez","parquearanjuez":"Parque Aranjuez","barriocolombia":"Barrio Colombia","barrio colombia":"Barrio Colombia","perpetuosocorro":"Perpetuo Socorro","perpetuo socorro":"Perpetuo Socorro","barriocolon":"Barrio Colón","barrio colon":"Barrio Colón","playa":"La Playa","la playa":"La Playa","laplaya":"La Playa","catedral":"Catedral","universal":"Universal","cordoba":"Córdoba","pilarica":"Pilarica","ciudadela universitaria":"Ciudadela Universitaria","ciudadelauniversitaria":"Ciudadela Universitaria","facultad de minas":"Facultad de Minas","facultaddeminas":"Facultad de Minas","los colores":"Los Colores","colores":"Los Colores","loscolores":"Los Colores","calasanz":"Calasanz","pinos":"Los Pinos","los pinos":"Los Pinos","lospinos":"Los Pinos","laureles":"Laureles","santagema":"Santa Gema","santa gema":"Santa Gema","villadeaburra":"Villa de Aburrá","villa de aburra":"Villa de Aburrá"};
+  // ── Datos cargados desde Metro_Medellin_SITVA.json ────────────────
+  // Misma lógica que el script Python (Import):
+  //   - generar_aliases()  →  base, sin_espacios, sin_artículo inicial
+  //   - ALIAS_MANUALES     →  atajos extra
+  //   - Grafo no-dirigido  →  aristas simétricas (u↔v)
+
+  let GRAFO  = {};
+  let NODOS  = {};
+  let INDICE = {};
+
+  const ARTICULOS = new Set(['el','la','los','las','de','del','un','una']);
+
+  const ALIAS_MANUALES = {
+    'Pabellón del Agua EPM': ['Pabellón', 'pabellon'],
+    'Ciudadela Universitaria': ['Ciudadela', 'ciudadela'],
+    'U. de M.': ['udm', 'udem'],
+  };
+
+  function normalizarStr(texto) {
+    return texto.toLowerCase().trim()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  function generarAliases(nombre) {
+    const base        = normalizarStr(nombre);          // "la estrella"
+    const sinEspacios = base.replace(/\s+/g, '');       // "laestrella"
+    const alias       = new Set([base, sinEspacios]);
+
+    const palabras = base.split(/\s+/);
+    if (palabras.length > 1 && ARTICULOS.has(palabras[0])) {
+      const sinArt = palabras.slice(1).join(' ');       // "estrella"
+      alias.add(sinArt);
+      alias.add(sinArt.replace(/\s+/g, ''));
+    }
+    return [...alias];
+  }
+
+  function agregarIndice(alias, nombre) {
+    // primero en llegar gana (setdefault del Python)
+    if (!(alias in INDICE)) INDICE[alias] = nombre;
+  }
+
+  async function cargarDatos() {
+    const resp = await fetch('Metro_Medellin_SITVA.json');
+    const data = await resp.json();
+
+    for (const linea of data.lineas) {
+      const clave      = linea.clave;
+      const estaciones = linea.estaciones;
+
+      for (const est of estaciones) {
+        const nombre = est.nombre;
+
+        if (!(nombre in NODOS)) {
+          NODOS[nombre] = {
+            municipio: est.municipio,
+            lat:       est.latitud,
+            lon:       est.longitud,
+            lineas:    [],
+          };
+
+          // Aliases automáticos (equivale a generar_aliases del Python)
+          for (const alias of generarAliases(nombre)) {
+            agregarIndice(alias, nombre);
+          }
+
+          // Aliases manuales extra
+          for (const aliasManual of (ALIAS_MANUALES[nombre] || [])) {
+            const norm = normalizarStr(aliasManual);
+            agregarIndice(norm, nombre);
+            agregarIndice(norm.replace(/\s+/g, ''), nombre);
+          }
+        }
+
+        if (!NODOS[nombre].lineas.includes(clave)) {
+          NODOS[nombre].lineas.push(clave);
+        }
+      }
+
+      // Aristas simétricas (grafo no-dirigido, igual que nx.Graph)
+      for (let i = 0; i < estaciones.length - 1; i++) {
+        const u    = estaciones[i].nombre;
+        const v    = estaciones[i + 1].nombre;
+        const dist = estaciones[i].dist_sig_km;
+        if (dist === null || dist === undefined) continue;
+
+        if (!GRAFO[u]) GRAFO[u] = {};
+        if (!GRAFO[v]) GRAFO[v] = {};
+
+        // Conservar la distancia menor si la arista ya existía
+        if (!(v in GRAFO[u]) || dist < GRAFO[u][v]) GRAFO[u][v] = dist;
+        if (!(u in GRAFO[v]) || dist < GRAFO[v][u]) GRAFO[v][u] = dist;
+      }
+    }
+  }
 
   const COLORES_LINEA = {
     A: '#C2432A', B: '#1D6FB5', J: '#E8A020',
@@ -496,30 +587,33 @@
     1: '#6366F1', 2: '#EC4899', O: '#84CC16',
   };
 
-  function normalizar(s) {
-    return s.toLowerCase().trim()
-      .normalize('NFD').replace(/[̀-ͯ]/g, '')
-      .replace(/\s+/g, '');
-  }
-
+  // buscarNodo: misma lógica que buscar_nodo() del Python
   function buscarNodo(entrada) {
-    // 1. Exacto sin espacios
-    const k = normalizar(entrada);
-    if (INDICE[k]) return INDICE[k];
-    // 2. Exacto con espacios normalizados
-    const kEsp = entrada.toLowerCase().trim()
-      .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    if (INDICE[kEsp]) return INDICE[kEsp];
-    // 3. El alias empieza con la entrada (ej. "pabellon" → "pabellondelaguaepm")
+    const kSinEsp = normalizarStr(entrada).replace(/\s+/g, '');
+    if (INDICE[kSinEsp]) return INDICE[kSinEsp];
+    const kConEsp = normalizarStr(entrada);
+    if (INDICE[kConEsp]) return INDICE[kConEsp];
+    // Búsqueda por prefijo (ej. "parqueber" → "parqueberrio")
     for (const [alias, nombre] of Object.entries(INDICE)) {
-      if (alias.startsWith(k)) return nombre;
-    }
-    // 4. La entrada empieza con el alias — solo si el alias es suficientemente largo (≥4 chars)
-    for (const [alias, nombre] of Object.entries(INDICE)) {
-      if (alias.length >= 4 && k.startsWith(alias)) return nombre;
+      if (alias.startsWith(kSinEsp) && kSinEsp.length >= 3) return nombre;
     }
     return null;
   }
+
+  // Estado de carga
+  let datosListos = false;
+  cargarDatos().then(() => {
+    datosListos = true;
+    const btn = document.querySelector('.btn-buscar');
+    if (btn) { btn.textContent = 'Calcular ruta →'; btn.disabled = false; }
+  }).catch(err => {
+    console.error('Error cargando Metro_Medellin_SITVA.json:', err);
+    const eb = document.getElementById('error-block');
+    if (eb) {
+      eb.textContent = 'Error al cargar Metro_Medellin_SITVA.json. Asegúrate de que está en la misma carpeta que el HTML.';
+      eb.className = 'error-block visible';
+    }
+  });
 
   function dijkstra(origen, destino) {
     const dist = {}, prev = {};
