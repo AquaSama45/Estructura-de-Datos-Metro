@@ -39,8 +39,8 @@
     color: var(--text);
     min-height: 100vh;
     display: grid;
+    grid-template-columns: 1fr 360px;
     grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr;
   }
 
   /* ── Header ── */
@@ -51,6 +51,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    grid-column: 1 / 3;
   }
 
   .header-left h1 {
@@ -87,16 +88,336 @@
 
   /* ── Main ── */
   main {
-    max-width: 760px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    min-width: 0;
   }
 
-  /* ── Sección de búsqueda ── */
+  /* ── Sidebar ── */
+  .side-box {
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Fixed height to fill viewport minus header/footer */
+    height: calc(100vh - 85px - 52px);
+    position: sticky;
+    top: 0;
+  }
+
+  /* Map area — takes 45% of sidebar height */
+  .sidebar-map {
+    flex: 0 0 auto;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f8f7f4;
+    padding: 0;
+  }
+
+  .sidebar-map-header {
+    width: 100%;
+    padding: 0.75rem 1.25rem 0.6rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface);
+  }
+
+  .sidebar-map-header span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0ede8;
+    position: relative;
+    cursor: zoom-in;
+  }
+
+  .map-container img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    display: block;
+  }
+
+  .map-container:hover img {
+    transform: scale(1.03);
+  }
+
+  .map-expand-hint {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    padding: 3px 7px;
+    border-radius: 2px;
+    letter-spacing: 0.06em;
+    pointer-events: none;
+  }
+
+  /* Map modal */
+  .map-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+  }
+  .map-modal.open { display: flex; }
+  .map-modal img {
+    max-width: 92vw;
+    max-height: 92vh;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  /* ── Checklist area ── */
+  .sidebar-checklist {
+    flex: 1 1 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checklist-header {
+    padding: 0.75rem 1.25rem 0.6rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .checklist-header span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .checklist-header .hint-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.62rem;
+    color: var(--muted);
+    font-weight: 300;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .checklist-body {
+    padding: 0.5rem 0;
+  }
+
+  /* Line group */
+  .line-group {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .line-group:last-child {
+    border-bottom: none;
+  }
+
+  .line-group-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.25rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.1s;
+    position: relative;
+  }
+
+  .line-group-header:hover {
+    background: var(--bg);
+  }
+
+  .line-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .line-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    flex: 1;
+    color: var(--text);
+  }
+
+  .line-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    color: var(--muted);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 1px 5px;
+    border-radius: 2px;
+  }
+
+  .line-count.has-disabled {
+    background: #FEF2F2;
+    border-color: #FECACA;
+    color: #991B1B;
+  }
+
+  .line-chevron {
+    font-size: 0.6rem;
+    color: var(--muted);
+    transition: transform 0.2s;
+    margin-left: 4px;
+  }
+
+  .line-group.open .line-chevron {
+    transform: rotate(90deg);
+  }
+
+  .line-stations {
+    display: none;
+    padding: 0 0 0.4rem 0;
+  }
+
+  .line-group.open .line-stations {
+    display: block;
+  }
+
+  /* Station checkbox item */
+  .station-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.28rem 1.25rem 0.28rem 2.2rem;
+    transition: background 0.1s;
+    cursor: pointer;
+  }
+
+  .station-item:hover {
+    background: var(--bg);
+  }
+
+  .station-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    border: 1.5px solid var(--border);
+    border-radius: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.15s;
+    background: var(--surface);
+  }
+
+  .station-item input[type="checkbox"]:checked {
+    background: var(--text);
+    border-color: var(--text);
+  }
+
+  .station-item input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 0px;
+    width: 5px;
+    height: 8px;
+    border: 1.5px solid #fff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+
+  .station-item input[type="checkbox"]:not(:checked) {
+    border-color: #FECACA;
+    background: #FEF2F2;
+  }
+
+  .station-label {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.2;
+    cursor: pointer;
+    flex: 1;
+  }
+
+  .station-label.disabled-station {
+    text-decoration: line-through;
+    color: var(--muted);
+    opacity: 0.6;
+  }
+
+  .disabled-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.52rem;
+    color: #991B1B;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+
+  /* Bulk actions */
+  .bulk-actions {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 1.25rem 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-bulk {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--bg);
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 4px 9px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.15s;
+  }
+
+  .btn-bulk:hover {
+    background: var(--text);
+    color: #fff;
+    border-color: var(--text);
+  }
+
+  /* ── Search block ── */
   .search-block {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -194,7 +515,20 @@
   .btn-buscar:hover  { opacity: 0.82; }
   .btn-buscar:active { transform: scale(0.98); }
 
-  /* ── Resultado ── */
+  /* Disabled-nodes alert banner */
+  .disabled-alert {
+    display: none;
+    padding: 0.6rem 1.5rem;
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-radius: 2px;
+    font-size: 0.78rem;
+    color: #92400E;
+    line-height: 1.4;
+  }
+  .disabled-alert.visible { display: block; }
+
+  /* ── Result ── */
   .result-block {
     display: none;
     background: var(--surface);
@@ -234,11 +568,20 @@
     margin-left: 3px;
   }
 
-  .ruta-container {
-    padding: 1.5rem;
-  }
+  .ruta-container { padding: 1.5rem; }
 
-  /* Línea de paradas */
+  .route-note {
+    font-size: 0.72rem;
+    color: #92400E;
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    padding: 0.5rem 0.75rem;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    display: none;
+  }
+  .route-note.visible { display: block; }
+
   .paradas-list {
     list-style: none;
     position: relative;
@@ -300,7 +643,7 @@
     color: var(--surface);
   }
 
-  /* ── Estadísticas ── */
+  /* ── Stats ── */
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -337,7 +680,7 @@
     margin-left: 2px;
   }
 
-  /* ── Líneas de referencia ── */
+  /* ── Lines reference ── */
   .lineas-ref {
     display: flex;
     gap: 1rem;
@@ -381,6 +724,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    grid-column: 1 / 3;
   }
 
   footer p {
@@ -400,7 +744,17 @@
     border-radius: 2px;
   }
 
+  /* Scrollbar styling */
+  .sidebar-checklist::-webkit-scrollbar { width: 4px; }
+  .sidebar-checklist::-webkit-scrollbar-track { background: transparent; }
+  .sidebar-checklist::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
   /* ── Responsive ── */
+  @media (max-width: 900px) {
+    body { grid-template-columns: 1fr; }
+    header, footer { grid-column: 1; }
+    .side-box { display: none; }
+  }
   @media (max-width: 560px) {
     .search-row { grid-template-columns: 1fr; }
     .search-field:first-child { border-right: none; border-bottom: 1px solid var(--border); }
@@ -417,12 +771,11 @@
     <h1>Metro <span>Medellín</span></h1>
     <p>SITVA — Sistema Integrado de Transporte</p>
   </div>
-  <span class="badge-nx"> Johan David / Carlos Salazar</span>
+  <span class="badge-nx">Johan David / Carlos Salazar</span>
 </header>
 
 <main>
 
-  <!-- Búsqueda -->
   <div class="search-block">
     <div class="search-row">
       <div class="search-field">
@@ -444,16 +797,16 @@
     </div>
   </div>
 
-  <!-- Error -->
+  <div class="disabled-alert" id="disabled-alert"></div>
   <div class="error-block" id="error-block"></div>
 
-  <!-- Resultado -->
   <div class="result-block" id="result-block">
     <div class="result-header">
       <span class="result-title">Ruta más corta</span>
       <span class="dist-badge" id="dist-text">— <span>km</span></span>
     </div>
     <div class="ruta-container">
+      <div class="route-note" id="route-note"></div>
       <ul class="paradas-list" id="paradas-list"></ul>
     </div>
     <div class="stats-grid">
@@ -468,7 +821,6 @@
     </div>
   </div>
 
-  <!-- Referencia de líneas -->
   <div class="lineas-ref">
     <div class="linea-pill"><div class="pill-dot" style="background:var(--line-a)"></div>Línea A</div>
     <div class="linea-pill"><div class="pill-dot" style="background:var(--line-b)"></div>Línea B</div>
@@ -486,20 +838,56 @@
 
 </main>
 
+<!-- Sidebar -->
+<aside class="side-box">
+
+  <!-- Map section -->
+  <div class="sidebar-map">
+    <div class="sidebar-map-header">
+      <span>Mapa del sistema</span>
+      <span class="hint-text">clic para ampliar</span>
+    </div>
+    <div class="map-container" id="mapContainer" onclick="abrirMapa()">
+      <img src="Mapa_Metro.jpeg" alt="Mapa Metro Medellín" id="metroMapImg">
+      <div class="map-expand-hint">⤢ ampliar</div>
+    </div>
+  </div>
+
+  <!-- Station checklist -->
+  <div class="sidebar-checklist">
+    <div class="checklist-header">
+      <span>Estaciones activas</span>
+      <span class="hint-text">✕ = fuera de servicio</span>
+    </div>
+    <div class="checklist-body">
+      <div class="bulk-actions">
+        <button class="btn-bulk" onclick="habilitarTodas()">Habilitar todas</button>
+        <button class="btn-bulk" onclick="deshabilitarTodas()">Deshabilitar todas</button>
+      </div>
+      <div id="checklist-lineas"></div>
+    </div>
+  </div>
+
+</aside>
+
+<!-- Map modal -->
+<div class="map-modal" id="mapModal" onclick="cerrarMapa()">
+  <img src="Mapa_Metro.jpeg" alt="Mapa Metro Medellín ampliado">
+</div>
+
 <footer>
   <p>Metro de Medellín · Visualizador de rutas</p>
+  <span class="algo-tag">dijkstra · grafo ponderado</span>
 </footer>
 
 <script>
-  // ── Datos cargados desde Metro_Medellin_SITVA.json ────────────────
-  // Misma lógica que el script Python (Import):
-  //   - generar_aliases()  →  base, sin_espacios, sin_artículo inicial
-  //   - ALIAS_MANUALES     →  atajos extra
-  //   - Grafo no-dirigido  →  aristas simétricas (u↔v)
-
+  /* ─── State ─────────────────────────────────────────────────── */
   let GRAFO  = {};
   let NODOS  = {};
   let INDICE = {};
+
+  // Set of disabled stations (names)
+  const DESHABILITADAS = new Set();
 
   const ARTICULOS = new Set(['el','la','los','las','de','del','un','una']);
 
@@ -509,19 +897,42 @@
     'U. de M.': ['udm', 'udem'],
   };
 
+  /* ─── Colors ─────────────────────────────────────────────────── */
+  const COLORES_LINEA = {
+    A: '#005496', B: '#F6821F', J: '#FDB913',
+    K: '#ACD258', T: '#1D9D48', M: '#6E2C8D',
+    H: '#DC3591', L: '#98671B', P: '#ED1A3B',
+    1: '#007C88', 2: '#60A9AF', O: '#EF7580',
+  };
+
+  const NOMBRES_LINEA = {
+    A: 'Línea A — Niquía · La Estrella',
+    B: 'Línea B — S. Antonio · S. Javier',
+    J: 'Línea J — S. Javier · La Aurora',
+    K: 'Línea K — Acevedo · S. Domingo',
+    L: 'Línea L — S. Domingo · Arví',
+    T: 'Tranvía T — S. Antonio · Oriente',
+    M: 'Metro Plus M — Miraflores · 13 Noviembre',
+    H: 'Línea H — Oriente · Villa Sierra',
+    P: 'Línea P — Acevedo · El Progreso',
+    1: 'BRT 1 — U. de M. · Parque Aranjuez',
+    2: 'BRT 2 — U. de M. · Parque Aranjuez',
+    O: 'BRT O — S. Antonio · La Palma',
+  };
+
+  /* ─── Normalización ──────────────────────────────────────────── */
   function normalizarStr(texto) {
     return texto.toLowerCase().trim()
       .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
 
   function generarAliases(nombre) {
-    const base        = normalizarStr(nombre);          // "la estrella"
-    const sinEspacios = base.replace(/\s+/g, '');       // "laestrella"
+    const base        = normalizarStr(nombre);
+    const sinEspacios = base.replace(/\s+/g, '');
     const alias       = new Set([base, sinEspacios]);
-
-    const palabras = base.split(/\s+/);
+    const palabras    = base.split(/\s+/);
     if (palabras.length > 1 && ARTICULOS.has(palabras[0])) {
-      const sinArt = palabras.slice(1).join(' ');       // "estrella"
+      const sinArt = palabras.slice(1).join(' ');
       alias.add(sinArt);
       alias.add(sinArt.replace(/\s+/g, ''));
     }
@@ -529,9 +940,12 @@
   }
 
   function agregarIndice(alias, nombre) {
-    // primero en llegar gana (setdefault del Python)
     if (!(alias in INDICE)) INDICE[alias] = nombre;
   }
+
+  /* ─── Carga de datos ─────────────────────────────────────────── */
+  // Stores line → stations mapping for checklist
+  let LINEAS_DATA = [];
 
   async function cargarDatos() {
     const resp = await fetch('Metro_Medellin_SITVA.json');
@@ -541,23 +955,24 @@
       const clave      = linea.clave;
       const estaciones = linea.estaciones;
 
+      // Store for checklist
+      LINEAS_DATA.push({ clave, estaciones: estaciones.map(e => e.nombre) });
+
       for (const est of estaciones) {
         const nombre = est.nombre;
 
         if (!(nombre in NODOS)) {
           NODOS[nombre] = {
             municipio: est.municipio,
-            lat:       est.latitud,
-            lon:       est.longitud,
-            lineas:    [],
+            lat: est.latitud,
+            lon: est.longitud,
+            lineas: [],
           };
 
-          // Aliases automáticos (equivale a generar_aliases del Python)
           for (const alias of generarAliases(nombre)) {
             agregarIndice(alias, nombre);
           }
 
-          // Aliases manuales extra
           for (const aliasManual of (ALIAS_MANUALES[nombre] || [])) {
             const norm = normalizarStr(aliasManual);
             agregarIndice(norm, nombre);
@@ -570,7 +985,6 @@
         }
       }
 
-      // Aristas simétricas (grafo no-dirigido, igual que nx.Graph)
       for (let i = 0; i < estaciones.length - 1; i++) {
         const u    = estaciones[i].nombre;
         const v    = estaciones[i + 1].nombre;
@@ -580,66 +994,195 @@
         if (!GRAFO[u]) GRAFO[u] = {};
         if (!GRAFO[v]) GRAFO[v] = {};
 
-        // Conservar la distancia menor si la arista ya existía
         if (!(v in GRAFO[u]) || dist < GRAFO[u][v]) GRAFO[u][v] = dist;
         if (!(u in GRAFO[v]) || dist < GRAFO[v][u]) GRAFO[v][u] = dist;
       }
     }
+
+    construirChecklist();
   }
 
-  const COLORES_LINEA = {
-    A: '#005496', B: '#F6821F', J: '#FDB913',
-    K: '#ACD258', T: '#1D9D48', M: '#6E2C8D',
-    H: '#DC3591', L: '#98671B', P: '#ED1A3B',
-    1: '#007C88', 2: '#60A9AF', O: '#EF7580',
-  };
+  /* ─── Checklist ──────────────────────────────────────────────── */
+  function construirChecklist() {
+    const container = document.getElementById('checklist-lineas');
+    container.innerHTML = '';
 
-  // buscarNodo: misma lógica que buscar_nodo() del Python
+    for (const linea of LINEAS_DATA) {
+      const clave    = linea.clave;
+      const color    = COLORES_LINEA[clave] || '#888';
+      const nombre   = NOMBRES_LINEA[clave] || ('Línea ' + clave);
+
+      const group = document.createElement('div');
+      group.className = 'line-group';
+      group.dataset.clave = clave;
+
+      // Header
+      const header = document.createElement('div');
+      header.className = 'line-group-header';
+      header.innerHTML = `
+        <div class="line-dot" style="background:${color}"></div>
+        <span class="line-name">${nombre}</span>
+        <span class="line-count" id="count-${clave}">${linea.estaciones.length}</span>
+        <span class="line-chevron">▶</span>
+      `;
+      header.addEventListener('click', () => toggleGrupo(group));
+
+      // Station list
+      const stList = document.createElement('div');
+      stList.className = 'line-stations';
+      stList.id = 'stations-' + clave;
+
+      // Deduplicate stations for this line (some share nodes)
+      const seen = new Set();
+      for (const stName of linea.estaciones) {
+        if (seen.has(stName)) continue;
+        seen.add(stName);
+
+        const item = document.createElement('label');
+        item.className = 'station-item';
+
+        const cbId = 'cb_' + clave + '_' + stName.replace(/\s+/g, '_');
+        item.innerHTML = `
+          <input type="checkbox" id="${cbId}" checked data-station="${stName}">
+          <span class="station-label" id="lbl_${cbId}">${stName}</span>
+        `;
+
+        const cb = item.querySelector('input');
+        cb.addEventListener('change', () => toggleEstacion(stName, cb.checked, clave));
+
+        stList.appendChild(item);
+      }
+
+      group.appendChild(header);
+      group.appendChild(stList);
+      container.appendChild(group);
+    }
+  }
+
+  function toggleGrupo(group) {
+    group.classList.toggle('open');
+  }
+
+  function toggleEstacion(nombre, activa, clave) {
+    if (activa) {
+      DESHABILITADAS.delete(nombre);
+    } else {
+      DESHABILITADAS.add(nombre);
+    }
+
+    // Update all checkboxes for this station (may appear in multiple lines)
+    document.querySelectorAll(`input[data-station="${CSS.escape(nombre)}"]`).forEach(cb => {
+      cb.checked = activa;
+      const lbl = cb.closest('label').querySelector('.station-label');
+      if (lbl) lbl.classList.toggle('disabled-station', !activa);
+    });
+
+    // Update line counts
+    actualizarConteos();
+    actualizarAlerta();
+  }
+
+  function actualizarConteos() {
+    for (const linea of LINEAS_DATA) {
+      const clave = linea.clave;
+      const totalDis = linea.estaciones.filter(n => DESHABILITADAS.has(n)).length;
+      const countEl = document.getElementById('count-' + clave);
+      if (!countEl) continue;
+      if (totalDis > 0) {
+        countEl.textContent = `${totalDis} ✕`;
+        countEl.classList.add('has-disabled');
+      } else {
+        countEl.textContent = linea.estaciones.length;
+        countEl.classList.remove('has-disabled');
+      }
+    }
+  }
+
+  function actualizarAlerta() {
+    const alertEl = document.getElementById('disabled-alert');
+    if (DESHABILITADAS.size === 0) {
+      alertEl.className = 'disabled-alert';
+      alertEl.textContent = '';
+    } else {
+      const lista = [...DESHABILITADAS].join(', ');
+      alertEl.textContent = `⚠ Estaciones fuera de servicio (${DESHABILITADAS.size}): ${lista}. Se buscará ruta alternativa.`;
+      alertEl.className = 'disabled-alert visible';
+    }
+  }
+
+  function habilitarTodas() {
+    DESHABILITADAS.clear();
+    document.querySelectorAll('input[data-station]').forEach(cb => {
+      cb.checked = true;
+      const lbl = cb.closest('label').querySelector('.station-label');
+      if (lbl) lbl.classList.remove('disabled-station');
+    });
+    actualizarConteos();
+    actualizarAlerta();
+  }
+
+  function deshabilitarTodas() {
+    Object.keys(NODOS).forEach(n => DESHABILITADAS.add(n));
+    document.querySelectorAll('input[data-station]').forEach(cb => {
+      cb.checked = false;
+      const lbl = cb.closest('label').querySelector('.station-label');
+      if (lbl) lbl.classList.add('disabled-station');
+    });
+    actualizarConteos();
+    actualizarAlerta();
+  }
+
+  /* ─── Map modal ──────────────────────────────────────────────── */
+  function abrirMapa() { document.getElementById('mapModal').classList.add('open'); }
+  function cerrarMapa() { document.getElementById('mapModal').classList.remove('open'); }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarMapa(); });
+
+  /* ─── Buscar nodo ────────────────────────────────────────────── */
   function buscarNodo(entrada) {
     const kSinEsp = normalizarStr(entrada).replace(/\s+/g, '');
     if (INDICE[kSinEsp]) return INDICE[kSinEsp];
     const kConEsp = normalizarStr(entrada);
     if (INDICE[kConEsp]) return INDICE[kConEsp];
-    // Búsqueda por prefijo (ej. "parqueber" → "parqueberrio")
     for (const [alias, nombre] of Object.entries(INDICE)) {
       if (alias.startsWith(kSinEsp) && kSinEsp.length >= 3) return nombre;
     }
     return null;
   }
 
-  // Estado de carga
-  let datosListos = false;
-  cargarDatos().then(() => {
-    datosListos = true;
-    const btn = document.querySelector('.btn-buscar');
-    if (btn) { btn.textContent = 'Calcular ruta →'; btn.disabled = false; }
-  }).catch(err => {
-    console.error('Error cargando Metro_Medellin_SITVA.json:', err);
-    const eb = document.getElementById('error-block');
-    if (eb) {
-      eb.textContent = 'Error al cargar Metro_Medellin_SITVA.json. Asegúrate de que está en la misma carpeta que el HTML.';
-      eb.className = 'error-block visible';
-    }
-  });
-
-  function dijkstra(origen, destino) {
+  /* ─── Dijkstra con nodos excluidos ──────────────────────────── */
+  function dijkstraConExcluidos(origen, destino, excluidos) {
     const dist = {}, prev = {};
     const visited = new Set();
-    for (const n of Object.keys(GRAFO)) dist[n] = Infinity;
+
+    for (const n of Object.keys(GRAFO)) {
+      // skip excluded nodes (except origin/destination, allow them as endpoints)
+      if (excluidos.has(n) && n !== origen && n !== destino) continue;
+      dist[n] = Infinity;
+    }
+    if (!(origen in dist)) dist[origen] = Infinity;
+    if (!(destino in dist)) dist[destino] = Infinity;
     dist[origen] = 0;
-    const queue = new Set(Object.keys(GRAFO));
+
+    const queue = new Set(Object.keys(dist));
+
     while (queue.size > 0) {
       let u = null;
       for (const n of queue) { if (u === null || dist[n] < dist[u]) u = n; }
       if (u === destino || dist[u] === Infinity) break;
       queue.delete(u); visited.add(u);
+
       for (const [v, w] of Object.entries(GRAFO[u] || {})) {
         if (visited.has(v)) continue;
+        // Skip excluded nodes (except destination)
+        if (excluidos.has(v) && v !== destino) continue;
+        if (!(v in dist)) continue; // node not in graph (also excluded)
         const alt = dist[u] + w;
         if (alt < dist[v]) { dist[v] = alt; prev[v] = u; }
       }
     }
+
     if (dist[destino] === Infinity) return null;
+
     const path = [];
     let cur = destino;
     while (cur) { path.unshift(cur); cur = prev[cur]; }
@@ -648,41 +1191,90 @@
 
   function getLineas(nombre) { return NODOS[nombre]?.lineas ?? []; }
 
+  /* ─── Main search ────────────────────────────────────────────── */
   function buscarRuta() {
     const origenInput  = document.getElementById('inp-origen').value.trim();
     const destinoInput = document.getElementById('inp-destino').value.trim();
     const errorBlock   = document.getElementById('error-block');
     const resultBlock  = document.getElementById('result-block');
+    const routeNote    = document.getElementById('route-note');
 
     errorBlock.className = 'error-block';
     resultBlock.className = 'result-block';
+    routeNote.className = 'route-note';
 
     if (!origenInput || !destinoInput) {
       errorBlock.textContent = 'Por favor ingresa tanto el origen como el destino.';
-      errorBlock.className = 'error-block visible'; return;
+      errorBlock.className = 'error-block visible';
+      return;
     }
+
     const origenNodo  = buscarNodo(origenInput);
     const destinoNodo = buscarNodo(destinoInput);
+
     if (!origenNodo) {
       errorBlock.innerHTML = 'Estación no encontrada: <strong>"' + origenInput + '"</strong>. Verifica el nombre.';
-      errorBlock.className = 'error-block visible'; return;
+      errorBlock.className = 'error-block visible';
+      return;
     }
     if (!destinoNodo) {
       errorBlock.innerHTML = 'Estación no encontrada: <strong>"' + destinoInput + '"</strong>. Verifica el nombre.';
-      errorBlock.className = 'error-block visible'; return;
+      errorBlock.className = 'error-block visible';
+      return;
     }
-    if (origenNodo === destinoNodo) {
-      errorBlock.textContent = 'El origen y el destino son la misma estación.';
-      errorBlock.className = 'error-block visible'; return;
+
+    // Check if origin or destination is disabled
+    const origenDeshabilitado  = DESHABILITADAS.has(origenNodo);
+    const destinoDeshabilitado = DESHABILITADAS.has(destinoNodo);
+
+    if (origenDeshabilitado) {
+      errorBlock.innerHTML = '⚠ Debido a problemas en la estación <strong>' + origenNodo + '</strong> no se puede llegar al punto de origen. Reactiva la estación en el panel lateral.';
+      errorBlock.className = 'error-block visible';
+      return;
     }
-    const resultado = dijkstra(origenNodo, destinoNodo);
+    if (destinoDeshabilitado) {
+      errorBlock.innerHTML = '⚠ Debido a problemas en la estación <strong>' + destinoNodo + '</strong> no se puede llegar al punto de destino. Reactiva la estación en el panel lateral.';
+      errorBlock.className = 'error-block visible';
+      return;
+    }
+
+    // Try with exclusions first
+    const resultado = dijkstraConExcluidos(origenNodo, destinoNodo, DESHABILITADAS);
+
     if (!resultado) {
-      errorBlock.innerHTML = 'No se encontró ruta entre <strong>' + origenNodo + '</strong> y <strong>' + destinoNodo + '</strong>.';
-      errorBlock.className = 'error-block visible'; return;
+      // Find which disabled station(s) are blocking the route
+      // Try without exclusions to see if a route exists at all
+      const sinExclusiones = dijkstraConExcluidos(origenNodo, destinoNodo, new Set());
+
+      if (!sinExclusiones) {
+        errorBlock.innerHTML = 'No existe ruta entre <strong>' + origenNodo + '</strong> y <strong>' + destinoNodo + '</strong> en el sistema.';
+      } else {
+        // Find the disabled stations on the optimal path
+        const pathBloqueado = sinExclusiones.path.filter(n => DESHABILITADAS.has(n));
+        const bloqueantes   = pathBloqueado.length > 0 ? pathBloqueado : [...DESHABILITADAS];
+        const nombresBlq    = bloqueantes.slice(0, 3).join(', ');
+        errorBlock.innerHTML = '⛔ Debido a problemas en la estación <strong>' + nombresBlq + '</strong> no se puede llegar al punto. No existe ruta alternativa disponible.';
+      }
+      errorBlock.className = 'error-block visible';
+      return;
     }
+
     const { path, distancia } = resultado;
+
+    // Check if route uses any "border" disabled stations and warn
+    // (shouldn't happen, but just in case)
+    const usaAlternativa = DESHABILITADAS.size > 0;
+    if (usaAlternativa) {
+      // Check if original path (no exclusions) would differ
+      const original = dijkstraConExcluidos(origenNodo, destinoNodo, new Set());
+      if (original && original.path.join(',') !== path.join(',')) {
+        routeNote.textContent = '⚠ Ruta alternativa calculada evitando estaciones fuera de servicio.';
+        routeNote.className = 'route-note visible';
+      }
+    }
+
     document.getElementById('dist-text').innerHTML = distancia.toFixed(2) + ' <span>km</span>';
-    document.getElementById('stat-dist').innerHTML = distancia.toFixed(2) + '<small>km</small>';
+    document.getElementById('stat-dist').innerHTML  = distancia.toFixed(2) + '<small>km</small>';
     document.getElementById('stat-paradas').textContent = path.length;
 
     const lista = document.getElementById('paradas-list');
@@ -699,10 +1291,23 @@
       li.innerHTML = nombre + tags;
       lista.appendChild(li);
     });
+
     resultBlock.className = 'result-block visible';
   }
 
-  document.addEventListener('keydown', e => { if (e.key === 'Enter') buscarRuta(); });
+  /* ─── Init ───────────────────────────────────────────────────── */
+  let datosListos = false;
+  cargarDatos().then(() => {
+    datosListos = true;
+    const btn = document.querySelector('.btn-buscar');
+    if (btn) { btn.textContent = 'Calcular ruta →'; btn.disabled = false; }
+  }).catch(err => {
+    console.error('Error cargando Metro_Medellin_SITVA.json:', err);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && e.target.tagName === 'INPUT') buscarRuta();
+  });
 </script>
 </body>
 </html>
