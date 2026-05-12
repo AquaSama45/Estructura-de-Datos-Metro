@@ -7,7 +7,7 @@
       "clave": "A",
       "hoja": "L.A",
       "nombre_completo": "Tipo: Metro  |  21 estaciones / paradas",
-      "tipo": "",
+      "tipo": "Metro",
       "total_estaciones": 21,
       "longitud_total_km": 23.86,
       "estaciones": [
@@ -206,7 +206,7 @@
       "clave": "B",
       "hoja": "L.B",
       "nombre_completo": "Tipo: Metro  |  7 estaciones / paradas",
-      "tipo": "",
+      "tipo": "Metro",
       "total_estaciones": 7,
       "longitud_total_km": 5.32,
       "estaciones": [
@@ -279,7 +279,7 @@
       "clave": "K",
       "hoja": "L.K",
       "nombre_completo": "Tipo: Cable  |  4 estaciones / paradas",
-      "tipo": "",
+      "tipo": "Cable",
       "total_estaciones": 4,
       "longitud_total_km": 2.66,
       "estaciones": [
@@ -325,7 +325,7 @@
       "clave": "L",
       "hoja": "L.L",
       "nombre_completo": "Tipo: Cable  |  2 estaciones / paradas",
-      "tipo": "",
+      "tipo": "Cable",
       "total_estaciones": 2,
       "longitud_total_km": 5.28,
       "estaciones": [
@@ -353,7 +353,7 @@
       "clave": "J",
       "hoja": "L.J",
       "nombre_completo": "Tipo: Cable  |  4 estaciones / paradas",
-      "tipo": "",
+      "tipo": "Cable",
       "total_estaciones": 4,
       "longitud_total_km": 2.85,
       "estaciones": [
@@ -399,7 +399,7 @@
       "clave": "H",
       "hoja": "L.H",
       "nombre_completo": "Tipo: Cable  |  3 estaciones / paradas",
-      "tipo": "",
+      "tipo": "Cable",
       "total_estaciones": 3,
       "longitud_total_km": 1.4,
       "estaciones": [
@@ -436,7 +436,7 @@
       "clave": "M",
       "hoja": "L.M",
       "nombre_completo": "Tipo: Cable  |  3 estaciones / paradas",
-      "tipo": "",
+      "tipo": "Cable",
       "total_estaciones": 3,
       "longitud_total_km": 1.96,
       "estaciones": [
@@ -473,7 +473,7 @@
       "clave": "P",
       "hoja": "L.P",
       "nombre_completo": "Tipo: Cable  |  4 estaciones / paradas",
-      "tipo": "",
+      "tipo": "Cable",
       "total_estaciones": 4,
       "longitud_total_km": 2.65,
       "estaciones": [
@@ -519,7 +519,7 @@
   "clave": "T",
   "hoja": "L.T",
   "nombre_completo": "Tipo: Tranvía  |  9 estaciones / paradas",
-  "tipo": "",
+  "tipo": "Tranvía",
   "total_estaciones": 9,
   "longitud_total_km": 6.1,
   "estaciones": [
@@ -610,7 +610,7 @@
       "clave": "1",
       "hoja": "L.1",
       "nombre_completo": "Línea 1 — BRT (U. de M. <->Parque Aranjuez, Av. del Ferrocarril)",
-      "tipo": "BRT",
+      "tipo": "MetroPlus",
       "color": "#388E3C",
       "estado": "operativo",
       "total_estaciones": 15,
@@ -828,7 +828,7 @@
       "clave": "2",
       "hoja": "L.2",
       "nombre_completo": "Línea 2 — BRT (U. de M. <-> Parque Aranjuez, Av. Oriental)",
-      "tipo": "BRT",
+      "tipo": "MetroPlus",
       "color": "#0288D1",
       "estado": "operativo",
       "total_estaciones": 21,
@@ -1048,7 +1048,7 @@
   "clave": "O",
   "hoja": "L.O",
   "nombre_completo": "Tipo: Bus Eléctrico | 15 estaciones / paradas",
-  "tipo": "Bus Eléctrico",
+  "tipo": "BusElectrico",
   "total_estaciones": 15,
   "longitud_total_km": 12.5,
   "estaciones": [
@@ -1188,6 +1188,170 @@
       "dist_acumulada_km": 12.5
     }
   ]
-}
+},
+{
+      "clave": "E",
+      "hoja": "L.E",
+      "nombre_completo": "Tipo: Metro ligero  |  17 estaciones / paradas",
+      "tipo": "Metro",
+      "total_estaciones": 17,
+      "longitud_total_km": 17.98,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "Caribe",
+          "municipio": "Medellín",
+          "latitud": 6.2779,
+          "longitud": -75.564,
+          "dist_sig_km": 3.22,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "Córdoba",
+          "municipio": "Medellín",
+          "latitud": 6.27,
+          "longitud": -75.592,
+          "dist_sig_km": 0.91,
+          "dist_acumulada_km": 3.22
+        },
+        {
+          "numero": 3,
+          "nombre": "Ciudadela Universitaria",
+          "municipio": "Medellín",
+          "latitud": 6.2635,
+          "longitud": -75.597,
+          "dist_sig_km": 0.82,
+          "dist_acumulada_km": 4.13
+        },
+        {
+          "numero": 4,
+          "nombre": "San Germán",
+          "municipio": "Medellín",
+          "latitud": 6.257,
+          "longitud": -75.6005,
+          "dist_sig_km": 0.8,
+          "dist_acumulada_km": 4.95
+        },
+        {
+          "numero": 5,
+          "nombre": "Colombia",
+          "municipio": "Medellín",
+          "latitud": 6.25,
+          "longitud": -75.602,
+          "dist_sig_km": 0.78,
+          "dist_acumulada_km": 5.75
+        },
+        {
+          "numero": 6,
+          "nombre": "Floresta",
+          "municipio": "Medellín",
+          "latitud": 6.2457,
+          "longitud": -75.5964,
+          "dist_sig_km": 1.0,
+          "dist_acumulada_km": 6.53
+        },
+        {
+          "numero": 7,
+          "nombre": "Los Pinos",
+          "municipio": "Medellín",
+          "latitud": 6.239,
+          "longitud": -75.6025,
+          "dist_sig_km": 0.9,
+          "dist_acumulada_km": 7.53
+        },
+        {
+          "numero": 8,
+          "nombre": "San Juan",
+          "municipio": "Medellín",
+          "latitud": 6.232,
+          "longitud": -75.6065,
+          "dist_sig_km": 0.85,
+          "dist_acumulada_km": 8.43
+        },
+        {
+          "numero": 9,
+          "nombre": "Villa de Aburrá",
+          "municipio": "Medellín",
+          "latitud": 6.2185,
+          "longitud": -75.6145,
+          "dist_sig_km": 1.67,
+          "dist_acumulada_km": 9.28
+        },
+        {
+          "numero": 10,
+          "nombre": "La Palma",
+          "municipio": "Medellín",
+          "latitud": 6.21,
+          "longitud": -75.627,
+          "dist_sig_km": 0.56,
+          "dist_acumulada_km": 9.85
+        },
+        {
+          "numero": 11,
+          "nombre": "San Bernardo",
+          "municipio": "Medellín",
+          "latitud": 6.205,
+          "longitud": -75.627,
+          "dist_sig_km": 0.88,
+          "dist_acumulada_km": 10.72
+        },
+        {
+          "numero": 12,
+          "nombre": "Loma de los Bernal",
+          "municipio": "Medellín",
+          "latitud": 6.198,
+          "longitud": -75.613,
+          "dist_sig_km": 0.9,
+          "dist_acumulada_km": 11.62
+        },
+        {
+          "numero": 13,
+          "nombre": "La Mota",
+          "municipio": "Medellín",
+          "latitud": 6.2005,
+          "longitud": -75.6205,
+          "dist_sig_km": 0.87,
+          "dist_acumulada_km": 12.49
+        },
+        
+        {
+          "numero": 14,
+          "nombre": "Cristo Rey",
+          "municipio": "Medellín",
+          "latitud": 6.1965,
+          "longitud": -75.605,
+          "dist_sig_km": 1.22,
+          "dist_acumulada_km": 13.71
+        },
+        {
+          "numero": 16,
+          "nombre": "Guayabal",
+          "municipio": "Medellín",
+          "latitud": 6.1953,
+          "longitud": -75.594,
+          "dist_sig_km": 1.7,
+          "dist_acumulada_km": 15.41
+        },
+        {
+          "numero": 17,
+          "nombre": "Apolo",
+          "municipio": "Medellín",
+          "latitud": 6.1991,
+          "longitud": -75.5791,
+          "dist_sig_km": 0.6,
+          "dist_acumulada_km": 16.98
+        },
+        {
+          "numero": 18,
+          "nombre": "Aguacatala",
+          "municipio": "Medellín",
+          "latitud": 6.1991,
+          "longitud": -75.5791,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 17.98
+        }
+      ]
+    }
   ]
 }

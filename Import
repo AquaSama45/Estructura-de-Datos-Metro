@@ -2,75 +2,7 @@ import json
 import unicodedata
 import networkx as nx
 
-# ─── Tarifas 2026 (COP) ──────────────────────────────────────────────────────
-# Fuente: Metro de Medellín — tarifas vigentes 2026
-TARIFAS_2026 = {
-    "Metro":          3_550,   # Líneas A y B (metro pesado)
-    "Tranvía":        3_550,   # Línea T (integrada con metro)
-    "MetroPlus":      3_550,   # Líneas 1, 2 y O (BRT / Bus Eléctrico)
-    "Cable":          3_550,   # Líneas K, L, J, H, M, P (cables aéreos)
-}
 
-# Tipo de cada línea
-TIPO_LINEA = {
-    "A": "Metro",    "B": "Metro",
-    "T": "Tranvía",
-    "1": "MetroPlus","2": "MetroPlus","O": "MetroPlus",
-    "K": "Cable",    "L": "Cable",    "J": "Cable",
-    "H": "Cable",    "M": "Cable",    "P": "Cable",
-}
-
-def calcular_costo(ruta: list[str], G: nx.Graph) -> tuple[int, list[str]]:
-    """
-    Calcula el costo total del viaje considerando trasbordos.
-
-    Regla tarifaria integrada del sistema SITVA:
-      - Se paga UN solo viaje (tarifa base) al entrar al sistema.
-      - Cada trasbordo entre líneas de DISTINTO tipo tarifario
-        genera un cobro adicional.
-      - Transbordos dentro del mismo tipo (p. ej. Metro A → Metro B)
-        NO generan cobro extra.
-
-    Retorna:
-      (costo_total_COP, lista de descripciones de cobros)
-    """
-    if len(ruta) < 1:
-        return 0, []
-
-    cobros: list[str] = []
-    costo_total: int  = 0
-
-    # Determina el tipo de cada estación según las líneas que la tocan
-    def tipo_estacion(nombre: str) -> str:
-        lineas = G.nodes[nombre].get("lineas", [])
-        # Prioridad: Metro > Tranvía > MetroPlus > Cable
-        for prioridad in ("Metro", "Tranvía", "MetroPlus", "Cable"):
-            for l in lineas:
-                if TIPO_LINEA.get(l) == prioridad:
-                    return prioridad
-        return "Metro"  # fallback
-
-    # Primer pago al abordar
-    tipo_actual = tipo_estacion(ruta[0])
-    tarifa_entrada = TARIFAS_2026[tipo_actual]
-    costo_total += tarifa_entrada
-    cobros.append(f"Entrada en {ruta[0]} ({tipo_actual}): ${tarifa_entrada:,}")
-
-    # Recorre la ruta buscando trasbordos
-    for i in range(1, len(ruta)):
-        tipo_siguiente = tipo_estacion(ruta[i])
-
-        # Trasbordo detectado: el tipo cambia
-        if tipo_siguiente != tipo_actual:
-            tarifa_trasbordo = TARIFAS_2026[tipo_siguiente]
-            costo_total += tarifa_trasbordo
-            cobros.append(
-                f"Trasbordo en {ruta[i]} "
-                f"({tipo_actual} → {tipo_siguiente}): ${tarifa_trasbordo:,}"
-            )
-            tipo_actual = tipo_siguiente
-
-    return costo_total, cobros
 
 # Normalización y aliases
 
@@ -164,6 +96,90 @@ for linea in data["lineas"]:
 
         if dist_km is not None:
             G.add_edge(origen, destino, weight=dist_km, linea=clave, tipo=tipo)
+
+# ─── Tarifas 2026 (COP) ──────────────────────────────────────────────────────
+# Fuente: Metro de Medellín — tarifas vigentes 2026
+TARIFAS_2026 = {
+    "Metro":          3_550,   # Líneas A y B (metro pesado)
+    "Tranvía":        5_550,   # Línea T (integrada con metro)
+    "MetroPlus":      3_550,   # Líneas 1, 2 y O (BRT / Bus Eléctrico)
+    "Cable":          3_550,   # Líneas K, L, J, H, M, P (cables aéreos)
+    "BusElectrico":          3_550,   # Líneas O (Bus Eléctrico)
+    
+}
+# Tipo de cada línea
+TIPO_LINEA = {}
+
+for linea in data['lineas']:
+    TIPO_LINEA[linea['clave']] = linea['tipo']
+    
+def calcular_costo(ruta: list[str], G: nx.Graph) -> tuple[int, list[str]]:
+    """
+    Calcula el costo total del viaje considerando trasbordos.
+
+    Regla tarifaria integrada del sistema SITVA:
+      - Se paga UN solo viaje (tarifa base) al entrar al sistema.
+      - Cada trasbordo entre líneas de DISTINTO tipo tarifario
+        genera un cobro adicional.
+      - Transbordos dentro del mismo tipo (p. ej. Metro A → Metro B)
+        NO generan cobro extra.
+      - Si viajas en una sola línea sin cambiar, NO se cobra trasbordo
+        aunque la estación intermedia pertenezca también a otra línea.
+
+    Retorna:
+      (costo_total_COP, lista de descripciones de cobros)
+    """
+    if len(ruta) < 1:
+        return 0, []
+
+    cobros: list[str] = []
+    costo_total: int  = 0
+
+    def tipo_linea_estacion(nombre: str) -> str:
+        """Tipo según prioridad de las líneas de la estación (fallback)."""        
+        lineas = G.nodes[nombre].get("lineas", [])
+        for prioridad in ("Metro", "Tranvía", "MetroPlus", "Cable"):
+            for l in lineas:
+                if TIPO_LINEA.get(l) == prioridad:
+                    return prioridad
+        return "Metro"
+
+    # Tipo de la primera arista (línea con la que se inicia el viaje)
+    if len(ruta) >= 2:
+        datos_arista = G.edges[ruta[0], ruta[1]]
+        primera_linea = datos_arista.get("linea")
+        tipo_actual = TIPO_LINEA.get(primera_linea, tipo_linea_estacion(ruta[0]))
+    else:
+        tipo_actual = tipo_linea_estacion(ruta[0])
+
+    tarifa_entrada = TARIFAS_2026[tipo_actual]
+    costo_total += tarifa_entrada
+    cobros.append(f"Entrada en {ruta[0]} ({tipo_actual}): ${tarifa_entrada:,}")
+
+    # Recorre la ruta usando la línea de CADA ARISTA recorrida
+    for i in range(1, len(ruta)):
+        if i < len(ruta) - 1:
+            # Línea de la arista que sale de ruta[i] hacia ruta[i+1]
+            datos_arista = G.edges[ruta[i], ruta[i + 1]]
+            linea_sig = datos_arista.get("linea")
+            tipo_siguiente = TIPO_LINEA.get(linea_sig, tipo_linea_estacion(ruta[i]))
+        else:
+            # Última estación: usamos la línea de la arista que llegó aquí
+            datos_arista = G.edges[ruta[i - 1], ruta[i]]
+            linea_sig = datos_arista.get("linea")
+            tipo_siguiente = TIPO_LINEA.get(linea_sig, tipo_linea_estacion(ruta[i]))
+
+        if tipo_siguiente != tipo_actual:
+            tarifa_trasbordo = TARIFAS_2026[tipo_siguiente]
+            costo_total += tarifa_trasbordo
+            cobros.append(
+                f"Trasbordo en {ruta[i]} "
+                f"({tipo_actual} → {tipo_siguiente}): ${tarifa_trasbordo:,}"
+            )
+            tipo_actual = tipo_siguiente
+
+    return costo_total, cobros
+
 
 # Función de búsqueda 
 
