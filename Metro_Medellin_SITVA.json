@@ -27,7 +27,7 @@
           "latitud": 6.3239,
           "longitud": -75.5567,
           "dist_sig_km": 1.61,
-          "dist_acumulada_km": 3.21
+          "dist_acumulada_km": 1.6
         },
         {
           "numero": 3,
@@ -36,7 +36,7 @@
           "latitud": 6.3097,
           "longitud": -75.5595,
           "dist_sig_km": 1.63,
-          "dist_acumulada_km": 4.84
+          "dist_acumulada_km": 3.21
         },
         {
           "numero": 4,
@@ -45,7 +45,7 @@
           "latitud": 6.2951,
           "longitud": -75.5607,
           "dist_sig_km": 0.91,
-          "dist_acumulada_km": 5.75
+          "dist_acumulada_km": 4.84
         },
         {
           "numero": 5,
@@ -54,7 +54,7 @@
           "latitud": 6.287,
           "longitud": -75.562,
           "dist_sig_km": 1.04,
-          "dist_acumulada_km": 6.79
+          "dist_acumulada_km": 5.75
         },
         {
           "numero": 6,
@@ -63,7 +63,7 @@
           "latitud": 6.2779,
           "longitud": -75.564,
           "dist_sig_km": 1.05,
-          "dist_acumulada_km": 7.84
+          "dist_acumulada_km": 6.79
         },
         {
           "numero": 7,
@@ -72,7 +72,7 @@
           "latitud": 6.2685,
           "longitud": -75.5643,
           "dist_sig_km": 0.87,
-          "dist_acumulada_km": 8.71
+          "dist_acumulada_km": 7.84
         },
         {
           "numero": 8,
@@ -81,7 +81,7 @@
           "latitud": 6.2607,
           "longitud": -75.5637,
           "dist_sig_km": 0.78,
-          "dist_acumulada_km": 9.49
+          "dist_acumulada_km": 8.71
         },
         {
           "numero": 9,
@@ -90,7 +90,7 @@
           "latitud": 6.2537,
           "longitud": -75.5632,
           "dist_sig_km": 0.78,
-          "dist_acumulada_km": 10.27
+          "dist_acumulada_km": 9.49
         },
         {
           "numero": 10,
@@ -99,7 +99,7 @@
           "latitud": 6.2467,
           "longitud": -75.564,
           "dist_sig_km": 0.68,
-          "dist_acumulada_km": 10.95
+          "dist_acumulada_km": 10.27
         },
         {
           "numero": 11,
@@ -108,7 +108,7 @@
           "latitud": 6.2407,
           "longitud": -75.5653,
           "dist_sig_km": 0.62,
-          "dist_acumulada_km": 11.57
+          "dist_acumulada_km": 10.95
         },
         {
           "numero": 12,
@@ -117,7 +117,7 @@
           "latitud": 6.2361,
           "longitud": -75.5685,
           "dist_sig_km": 0.84,
-          "dist_acumulada_km": 12.41
+          "dist_acumulada_km": 11.57
         },
         {
           "numero": 13,
@@ -126,7 +126,7 @@
           "latitud": 6.2302,
           "longitud": -75.5732,
           "dist_sig_km": 0.9,
-          "dist_acumulada_km": 13.31
+          "dist_acumulada_km": 12.41
         },
         {
           "numero": 14,
@@ -135,7 +135,7 @@
           "latitud": 6.2237,
           "longitud": -75.578,
           "dist_sig_km": 1.55,
-          "dist_acumulada_km": 14.86
+          "dist_acumulada_km": 13.31
         },
         {
           "numero": 15,
@@ -144,7 +144,7 @@
           "latitud": 6.2098,
           "longitud": -75.5782,
           "dist_sig_km": 1.19,
-          "dist_acumulada_km": 16.05
+          "dist_acumulada_km": 14.86
         },
         {
           "numero": 16,
@@ -153,7 +153,7 @@
           "latitud": 6.1991,
           "longitud": -75.5791,
           "dist_sig_km": 1.22,
-          "dist_acumulada_km": 17.27
+          "dist_acumulada_km": 16.05
         },
         {
           "numero": 17,
@@ -162,7 +162,7 @@
           "latitud": 6.1882,
           "longitud": -75.5778,
           "dist_sig_km": 1.49,
-          "dist_acumulada_km": 18.76
+          "dist_acumulada_km": 17.27
         },
         {
           "numero": 18,
@@ -171,7 +171,7 @@
           "latitud": 6.1756,
           "longitud": -75.5825,
           "dist_sig_km": 1.36,
-          "dist_acumulada_km": 20.12
+          "dist_acumulada_km": 18.76
         },
         {
           "numero": 19,
@@ -180,7 +180,7 @@
           "latitud": 6.165,
           "longitud": -75.5887,
           "dist_sig_km": 2.4,
-          "dist_acumulada_km": 22.52
+          "dist_acumulada_km": 20.12
         },
         {
           "numero": 20,
@@ -189,7 +189,7 @@
           "latitud": 6.1523,
           "longitud": -75.6062,
           "dist_sig_km": 1.34,
-          "dist_acumulada_km": 23.86
+          "dist_acumulada_km": 22.52
         },
         {
           "numero": 21,
@@ -226,7 +226,7 @@
           "latitud": 6.2422,
           "longitud": -75.5706,
           "dist_sig_km": 0.92,
-          "dist_acumulada_km": 1.53
+          "dist_acumulada_km": 0.61
         },
         {
           "numero": 3,
@@ -235,7 +235,7 @@
           "latitud": 6.2438,
           "longitud": -75.5788,
           "dist_sig_km": 0.98,
-          "dist_acumulada_km": 2.51
+          "dist_acumulada_km": 1.53
         },
         {
           "numero": 4,
@@ -244,7 +244,7 @@
           "latitud": 6.2449,
           "longitud": -75.5876,
           "dist_sig_km": 0.98,
-          "dist_acumulada_km": 3.49
+          "dist_acumulada_km": 2.51
         },
         {
           "numero": 5,
@@ -253,7 +253,7 @@
           "latitud": 6.2457,
           "longitud": -75.5964,
           "dist_sig_km": 0.96,
-          "dist_acumulada_km": 4.45
+          "dist_acumulada_km": 3.49
         },
         {
           "numero": 6,
@@ -262,7 +262,7 @@
           "latitud": 6.2447,
           "longitud": -75.605,
           "dist_sig_km": 0.87,
-          "dist_acumulada_km": 5.32
+          "dist_acumulada_km": 4.45
         },
         {
           "numero": 7,
@@ -299,7 +299,7 @@
           "latitud": 6.2983,
           "longitud": -75.5527,
           "dist_sig_km": 0.85,
-          "dist_acumulada_km": 1.8
+          "dist_acumulada_km": 0.95
         },
         {
           "numero": 3,
@@ -308,7 +308,7 @@
           "latitud": 6.301,
           "longitud": -75.5455,
           "dist_sig_km": 0.86,
-          "dist_acumulada_km": 2.66
+          "dist_acumulada_km": 1.8
         },
         {
           "numero": 4,
@@ -373,7 +373,7 @@
           "latitud": 6.2513,
           "longitud": -75.6174,
           "dist_sig_km": 0.97,
-          "dist_acumulada_km": 1.98
+          "dist_acumulada_km": 1.01
         },
         {
           "numero": 3,
@@ -382,7 +382,7 @@
           "latitud": 6.259,
           "longitud": -75.6215,
           "dist_sig_km": 0.87,
-          "dist_acumulada_km": 2.85
+          "dist_acumulada_km": 1.98
         },
         {
           "numero": 4,
@@ -419,7 +419,7 @@
           "latitud": 6.231,
           "longitud": -75.531,
           "dist_sig_km": 0.7,
-          "dist_acumulada_km": 1.4
+          "dist_acumulada_km": 0.7
         },
         {
           "numero": 3,
@@ -456,7 +456,7 @@
           "latitud": 6.231,
           "longitud": -75.544,
           "dist_sig_km": 0.93,
-          "dist_acumulada_km": 1.96
+          "dist_acumulada_km": 1.03
         },
         {
           "numero": 3,
@@ -493,7 +493,7 @@
           "latitud": 6.297,
           "longitud": -75.568,
           "dist_sig_km": 0.91,
-          "dist_acumulada_km": 1.74
+          "dist_acumulada_km": 0.83
         },
         {
           "numero": 3,
@@ -502,7 +502,7 @@
           "latitud": 6.299,
           "longitud": -75.576,
           "dist_sig_km": 0.91,
-          "dist_acumulada_km": 2.65
+          "dist_acumulada_km": 1.74
         },
         {
           "numero": 4,
@@ -515,97 +515,97 @@
         }
       ]
     },
-  {
-  "clave": "T",
-  "hoja": "L.T",
-  "nombre_completo": "Tipo: Tranvía  |  9 estaciones / paradas",
-  "tipo": "Tranvía",
-  "total_estaciones": 9,
-  "longitud_total_km": 6.1,
-  "estaciones": [
     {
-      "numero": 1,
-      "nombre": "San Antonio",
-      "municipio": "Medellín",
-      "latitud": 6.2407,
-      "longitud": -75.5653,
-      "dist_sig_km": 0.82,
-      "dist_acumulada_km": 0.0
+      "clave": "T",
+      "hoja": "L.T",
+      "nombre_completo": "Tipo: Tranvía  |  9 estaciones / paradas",
+      "tipo": "Tranvía",
+      "total_estaciones": 9,
+      "longitud_total_km": 4.1,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "San Antonio",
+          "municipio": "Medellín",
+          "latitud": 6.2407,
+          "longitud": -75.5653,
+          "dist_sig_km": 0.82,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "San José",
+          "municipio": "Medellín",
+          "latitud": 6.2355,
+          "longitud": -75.56,
+          "dist_sig_km": 0.67,
+          "dist_acumulada_km": 0.82
+        },
+        {
+          "numero": 3,
+          "nombre": "Pabellón del Agua EPM",
+          "municipio": "Medellín",
+          "latitud": 6.231,
+          "longitud": -75.556,
+          "dist_sig_km": 0.52,
+          "dist_acumulada_km": 1.49
+        },
+        {
+          "numero": 4,
+          "nombre": "Bicentenario",
+          "municipio": "Medellín",
+          "latitud": 6.2285,
+          "longitud": -75.552,
+          "dist_sig_km": 0.45,
+          "dist_acumulada_km": 2.01
+        },
+        {
+          "numero": 5,
+          "nombre": "Buenos Aires",
+          "municipio": "Medellín",
+          "latitud": 6.2268,
+          "longitud": -75.5483,
+          "dist_sig_km": 0.35,
+          "dist_acumulada_km": 2.46
+        },
+        {
+          "numero": 6,
+          "nombre": "Miraflores",
+          "municipio": "Medellín",
+          "latitud": 6.2258,
+          "longitud": -75.5453,
+          "dist_sig_km": 0.39,
+          "dist_acumulada_km": 2.81
+        },
+        {
+          "numero": 7,
+          "nombre": "Loyola",
+          "municipio": "Medellín",
+          "latitud": 6.227,
+          "longitud": -75.542,
+          "dist_sig_km": 0.4,
+          "dist_acumulada_km": 3.2
+        },
+        {
+          "numero": 8,
+          "nombre": "Alejandro Echavarría",
+          "municipio": "Medellín",
+          "latitud": 6.225,
+          "longitud": -75.539,
+          "dist_sig_km": 0.5,
+          "dist_acumulada_km": 3.6
+        },
+        {
+          "numero": 9,
+          "nombre": "Oriente",
+          "municipio": "Medellín",
+          "latitud": 6.229,
+          "longitud": -75.537,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 4.1
+        }
+      ]
     },
-    {
-      "numero": 2,
-      "nombre": "San José",
-      "municipio": "Medellín",
-      "latitud": 6.2355,
-      "longitud": -75.5600,
-      "dist_sig_km": 0.67,
-      "dist_acumulada_km": 1.49
-    },
-    {
-      "numero": 3,
-      "nombre": "Pabellón del Agua EPM",
-      "municipio": "Medellín",
-      "latitud": 6.2310,
-      "longitud": -75.5560,
-      "dist_sig_km": 0.52,
-      "dist_acumulada_km": 2.01
-    },
-    {
-      "numero": 4,
-      "nombre": "Bicentenario",
-      "municipio": "Medellín",
-      "latitud": 6.2285,
-      "longitud": -75.5520,
-      "dist_sig_km": 0.40,
-      "dist_acumulada_km": 2.50
-    },
-    {
-      "numero": 5,
-      "nombre": "Buenos Aires",
-      "municipio": "Medellín",
-      "latitud": 6.2268,
-      "longitud": -75.5483,
-      "dist_sig_km": 0.42,
-      "dist_acumulada_km": 2.90
-    },
-    {
-      "numero": 6,
-      "nombre": "Miraflores",
-      "municipio": "Medellín",
-      "latitud": 6.2258,
-      "longitud": -75.5453,
-      "dist_sig_km": 0.45,
-      "dist_acumulada_km": 3.32
-    },
-    {
-      "numero": 7,
-      "nombre": "Loyola",
-      "municipio": "Medellín",
-      "latitud": 6.2270,
-      "longitud": -75.5420,
-      "dist_sig_km": 0.55,
-      "dist_acumulada_km": 3.77
-    },
-    {
-      "numero": 8,
-      "nombre": "Alejandro Echavarría",
-      "municipio": "Medellín",
-      "latitud": 6.2250,
-      "longitud": -75.5390,
-      "dist_sig_km": 1.17,
-      "dist_acumulada_km": 4.94
-    },
-    {
-      "numero": 9,
-      "nombre": "Oriente",
-      "municipio": "Medellín",
-      "latitud": 6.2290,
-      "longitud": -75.5370,
-      "dist_sig_km": null,
-      "dist_acumulada_km": 6.1
-    }
-  ]
-},
     {
       "clave": "1",
       "hoja": "L.1",
@@ -614,7 +614,7 @@
       "color": "#388E3C",
       "estado": "operativo",
       "total_estaciones": 15,
-      "longitud_total_km": 22.9,
+      "longitud_total_km": 28.95,
       "estaciones": [
         {
           "numero": 1,
@@ -623,7 +623,7 @@
           "latitud": 6.213,
           "longitud": -75.625,
           "dist_sig_km": 0.41,
-          "dist_acumulada_km": 0,
+          "dist_acumulada_km": 0.0,
           "conexiones": []
         },
         {
@@ -754,7 +754,7 @@
           "municipio": "Medellín",
           "latitud": 6.287,
           "longitud": -75.562,
-          "dist_sig_km": 1.98,
+          "dist_sig_km": 3.02,
           "dist_acumulada_km": 20.92,
           "conexiones": [
             "A"
@@ -767,7 +767,7 @@
           "latitud": 6.26,
           "longitud": -75.559,
           "dist_sig_km": 0.55,
-          "dist_acumulada_km": 15.88,
+          "dist_acumulada_km": 23.94,
           "conexiones": []
         },
         {
@@ -777,7 +777,7 @@
           "latitud": 6.264,
           "longitud": -75.556,
           "dist_sig_km": 0.55,
-          "dist_acumulada_km": 16.43,
+          "dist_acumulada_km": 24.49,
           "conexiones": []
         },
         {
@@ -787,7 +787,7 @@
           "latitud": 6.268,
           "longitud": -75.553,
           "dist_sig_km": 0.55,
-          "dist_acumulada_km": 16.98,
+          "dist_acumulada_km": 25.04,
           "conexiones": []
         },
         {
@@ -797,7 +797,7 @@
           "latitud": 6.272,
           "longitud": -75.55,
           "dist_sig_km": 0.55,
-          "dist_acumulada_km": 17.53,
+          "dist_acumulada_km": 25.59,
           "conexiones": []
         },
         {
@@ -807,7 +807,7 @@
           "latitud": 6.276,
           "longitud": -75.547,
           "dist_sig_km": 2.81,
-          "dist_acumulada_km": 18.08,
+          "dist_acumulada_km": 26.14,
           "conexiones": []
         },
         {
@@ -817,7 +817,7 @@
           "latitud": 6.301,
           "longitud": -75.551,
           "dist_sig_km": null,
-          "dist_acumulada_km": 20.89,
+          "dist_acumulada_km": 28.95,
           "conexiones": [
             "1"
           ]
@@ -841,7 +841,7 @@
           "latitud": 6.213,
           "longitud": -75.625,
           "dist_sig_km": 0.41,
-          "dist_acumulada_km": 0,
+          "dist_acumulada_km": 0.0,
           "conexiones": []
         },
         {
@@ -910,7 +910,7 @@
           "municipio": "Medellín",
           "latitud": 6.2237,
           "longitud": -75.578,
-          "dist_sig_km": 3.92,
+          "dist_sig_km": 1.13,
           "dist_acumulada_km": 8.46,
           "conexiones": []
         },
@@ -976,7 +976,7 @@
           "municipio": "Medellín",
           "latitud": 6.249,
           "longitud": -75.566,
-          "dist_sig_km": 2.0,
+          "dist_sig_km": 1.45,
           "dist_acumulada_km": 14.43,
           "conexiones": []
         },
@@ -1044,158 +1044,149 @@
         }
       ]
     },
-   {
-  "clave": "O",
-  "hoja": "L.O",
-  "nombre_completo": "Tipo: Bus Eléctrico | 15 estaciones / paradas",
-  "tipo": "BusElectrico",
-  "total_estaciones": 15,
-  "longitud_total_km": 12.5,
-  "estaciones": [
     {
-      "numero": 1,
-      "nombre": "Caribe",
-      "municipio": "Medellín",
-      "latitud": 6.273,
-      "longitud": -75.576,
-      "dist_sig_km": 0.6,
-      "dist_acumulada_km": 0.0
+      "clave": "O",
+      "hoja": "L.O",
+      "nombre_completo": "Tipo: Bus Eléctrico | 15 estaciones / paradas",
+      "tipo": "BusElectrico",
+      "total_estaciones": 14,
+      "longitud_total_km": 12.37,
+      "estaciones": [
+        {
+          "numero": 1,
+          "nombre": "Caribe",
+          "municipio": "Medellín",
+          "latitud": 6.2779,
+          "longitud": -75.564,
+          "dist_sig_km": 0.79,
+          "dist_acumulada_km": 0.0
+        },
+        {
+          "numero": 2,
+          "nombre": "Universal",
+          "municipio": "Medellín",
+          "latitud": 6.274,
+          "longitud": -75.57,
+          "dist_sig_km": 0.8,
+          "dist_acumulada_km": 0.79
+        },
+        {
+          "numero": 3,
+          "nombre": "Córdoba",
+          "municipio": "Medellín",
+          "latitud": 6.27,
+          "longitud": -75.576,
+          "dist_sig_km": 0.81,
+          "dist_acumulada_km": 1.59
+        },
+        {
+          "numero": 4,
+          "nombre": "Pilarica",
+          "municipio": "Medellín",
+          "latitud": 6.2658,
+          "longitud": -75.582,
+          "dist_sig_km": 0.74,
+          "dist_acumulada_km": 2.4
+        },
+        {
+          "numero": 5,
+          "nombre": "Ciudadela Universitaria",
+          "municipio": "Medellín",
+          "latitud": 6.262,
+          "longitud": -75.5875,
+          "dist_sig_km": 0.68,
+          "dist_acumulada_km": 3.14
+        },
+        {
+          "numero": 6,
+          "nombre": "Facultad de Minas",
+          "municipio": "Medellín",
+          "latitud": 6.2578,
+          "longitud": -75.592,
+          "dist_sig_km": 0.64,
+          "dist_acumulada_km": 3.82
+        },
+        {
+          "numero": 7,
+          "nombre": "Los Colores",
+          "municipio": "Medellín",
+          "latitud": 6.2535,
+          "longitud": -75.5958,
+          "dist_sig_km": 0.63,
+          "dist_acumulada_km": 4.46
+        },
+        {
+          "numero": 8,
+          "nombre": "Calasanz",
+          "municipio": "Medellín",
+          "latitud": 6.2488,
+          "longitud": -75.599,
+          "dist_sig_km": 0.45,
+          "dist_acumulada_km": 5.09
+        },
+        {
+          "numero": 9,
+          "nombre": "Floresta",
+          "municipio": "Medellín",
+          "latitud": 6.2457,
+          "longitud": -75.5964,
+          "dist_sig_km": 0.67,
+          "dist_acumulada_km": 5.54
+        },
+        {
+          "numero": 10,
+          "nombre": "Los Pinos",
+          "municipio": "Medellín",
+          "latitud": 6.24,
+          "longitud": -75.5985,
+          "dist_sig_km": 0.68,
+          "dist_acumulada_km": 6.21
+        },
+        {
+          "numero": 11,
+          "nombre": "Laureles",
+          "municipio": "Medellín",
+          "latitud": 6.234,
+          "longitud": -75.5995,
+          "dist_sig_km": 0.69,
+          "dist_acumulada_km": 6.89
+        },
+        {
+          "numero": 12,
+          "nombre": "Santa Gema",
+          "municipio": "Medellín",
+          "latitud": 6.228,
+          "longitud": -75.601,
+          "dist_sig_km": 0.7,
+          "dist_acumulada_km": 7.58
+        },
+        {
+          "numero": 13,
+          "nombre": "Villa de Aburrá",
+          "municipio": "Medellín",
+          "latitud": 6.222,
+          "longitud": -75.603,
+          "dist_sig_km": 0.74,
+          "dist_acumulada_km": 8.28
+        },
+        {
+          "numero": 14,
+          "nombre": "La Palma",
+          "municipio": "Medellín",
+          "latitud": 6.2155,
+          "longitud": -75.6045,
+          "dist_sig_km": null,
+          "dist_acumulada_km": 9.02
+        }
+      ]
     },
     {
-      "numero": 2,
-      "nombre": "Universal",
-      "municipio": "Medellín",
-      "latitud": 6.271,
-      "longitud": -75.579,
-      "dist_sig_km": 0.5,
-      "dist_acumulada_km": 0.6
-    },
-    {
-      "numero": 3,
-      "nombre": "Córdoba",
-      "municipio": "Medellín",
-      "latitud": 6.269,
-      "longitud": -75.582,
-      "dist_sig_km": 0.6,
-      "dist_acumulada_km": 1.1
-    },
-    {
-      "numero": 4,
-      "nombre": "Pilarica",
-      "municipio": "Medellín",
-      "latitud": 6.266,
-      "longitud": -75.585,
-      "dist_sig_km": 0.5,
-      "dist_acumulada_km": 1.7
-    },
-    {
-      "numero": 5,
-      "nombre": "Ciudadela Universitaria",
-      "municipio": "Medellín",
-      "latitud": 6.264,
-      "longitud": -75.588,
-      "dist_sig_km": 0.6,
-      "dist_acumulada_km": 2.2
-    },
-    {
-      "numero": 6,
-      "nombre": "Facultad de Minas",
-      "municipio": "Medellín",
-      "latitud": 6.261,
-      "longitud": -75.591,
-      "dist_sig_km": 0.4,
-      "dist_acumulada_km": 2.8
-    },
-    {
-      "numero": 7,
-      "nombre": "Los Colores",
-      "municipio": "Medellín",
-      "latitud": 6.258,
-      "longitud": -75.593,
-      "dist_sig_km": 0.5,
-      "dist_acumulada_km": 3.2
-    },
-    {
-      "numero": 8,
-      "nombre": "Calasanz",
-      "municipio": "Medellín",
-      "latitud": 6.254,
-      "longitud": -75.596,
-      "dist_sig_km": 0.7,
-      "dist_acumulada_km": 3.7
-    },
-    {
-      "numero": 9,
-      "nombre": "Floresta",
-      "municipio": "Medellín",
-      "latitud": 6.250,
-      "longitud": -75.598,
-      "dist_sig_km": 0.6,
-      "dist_acumulada_km": 4.4
-    },
-    {
-      "numero": 10,
-      "nombre": "Los Pinos",
-      "municipio": "Medellín",
-      "latitud": 6.245,
-      "longitud": -75.597,
-      "dist_sig_km": 0.8,
-      "dist_acumulada_km": 5.0
-    },
-    {
-      "numero": 11,
-      "nombre": "Laureles",
-      "municipio": "Medellín",
-      "latitud": 6.239,
-      "longitud": -75.597,
-      "dist_sig_km": 0.7,
-      "dist_acumulada_km": 5.8
-    },
-    {
-      "numero": 12,
-      "nombre": "Santa Gema",
-      "municipio": "Medellín",
-      "latitud": 6.235,
-      "longitud": -75.600,
-      "dist_sig_km": 0.6,
-      "dist_acumulada_km": 6.5
-    },
-    {
-      "numero": 13,
-      "nombre": "Villa de Aburrá",
-      "municipio": "Medellín",
-      "latitud": 6.231,
-      "longitud": -75.602,
-      "dist_sig_km": 0.5,
-      "dist_acumulada_km": 7.1
-    },
-    {
-      "numero": 14,
-      "nombre": "La Palma",
-      "municipio": "Medellín",
-      "latitud": 6.227,
-      "longitud": -75.601,
-      "dist_sig_km": 4.9,
-      "dist_acumulada_km": 7.6
-    },
-    {
-      "numero": 15,
-      "nombre": "Aguacatala",
-      "municipio": "Medellín",
-      "latitud": 6.195,
-      "longitud": -75.582,
-      "dist_sig_km": null,
-      "dist_acumulada_km": 12.5
-    }
-  ]
-},
-{
       "clave": "E",
       "hoja": "L.E",
       "nombre_completo": "Tipo: Metro ligero  |  17 estaciones / paradas",
       "tipo": "Metro",
       "total_estaciones": 17,
-      "longitud_total_km": 17.98,
+      "longitud_total_km": 18.91,
       "estaciones": [
         {
           "numero": 1,
@@ -1266,7 +1257,7 @@
           "municipio": "Medellín",
           "latitud": 6.232,
           "longitud": -75.6065,
-          "dist_sig_km": 0.85,
+          "dist_sig_km": 1.55,
           "dist_acumulada_km": 8.43
         },
         {
@@ -1274,9 +1265,9 @@
           "nombre": "Villa de Aburrá",
           "municipio": "Medellín",
           "latitud": 6.2185,
-          "longitud": -75.6145,
-          "dist_sig_km": 1.67,
-          "dist_acumulada_km": 9.28
+          "longitud": -75.61,
+          "dist_sig_km": 2.1,
+          "dist_acumulada_km": 9.98
         },
         {
           "numero": 10,
@@ -1285,7 +1276,7 @@
           "latitud": 6.21,
           "longitud": -75.627,
           "dist_sig_km": 0.56,
-          "dist_acumulada_km": 9.85
+          "dist_acumulada_km": 12.08
         },
         {
           "numero": 11,
@@ -1293,28 +1284,27 @@
           "municipio": "Medellín",
           "latitud": 6.205,
           "longitud": -75.627,
-          "dist_sig_km": 0.88,
-          "dist_acumulada_km": 10.72
+          "dist_sig_km": 0.99,
+          "dist_acumulada_km": 12.64
         },
         {
           "numero": 12,
           "nombre": "Loma de los Bernal",
           "municipio": "Medellín",
-          "latitud": 6.198,
-          "longitud": -75.613,
-          "dist_sig_km": 0.9,
-          "dist_acumulada_km": 11.62
+          "latitud": 6.201,
+          "longitud": -75.619,
+          "dist_sig_km": 0.91,
+          "dist_acumulada_km": 13.63
         },
         {
           "numero": 13,
           "nombre": "La Mota",
           "municipio": "Medellín",
-          "latitud": 6.2005,
-          "longitud": -75.6205,
-          "dist_sig_km": 0.87,
-          "dist_acumulada_km": 12.49
+          "latitud": 6.1945,
+          "longitud": -75.614,
+          "dist_sig_km": 1.02,
+          "dist_acumulada_km": 14.54
         },
-        
         {
           "numero": 14,
           "nombre": "Cristo Rey",
@@ -1322,7 +1312,7 @@
           "latitud": 6.1965,
           "longitud": -75.605,
           "dist_sig_km": 1.22,
-          "dist_acumulada_km": 13.71
+          "dist_acumulada_km": 15.56
         },
         {
           "numero": 16,
@@ -1331,7 +1321,7 @@
           "latitud": 6.1953,
           "longitud": -75.594,
           "dist_sig_km": 1.7,
-          "dist_acumulada_km": 15.41
+          "dist_acumulada_km": 16.78
         },
         {
           "numero": 17,
@@ -1339,17 +1329,17 @@
           "municipio": "Medellín",
           "latitud": 6.1991,
           "longitud": -75.5791,
-          "dist_sig_km": 0.6,
-          "dist_acumulada_km": 16.98
+          "dist_sig_km": 0.43,
+          "dist_acumulada_km": 18.48
         },
         {
           "numero": 18,
           "nombre": "Aguacatala",
           "municipio": "Medellín",
-          "latitud": 6.1991,
+          "latitud": 6.203,
           "longitud": -75.5791,
           "dist_sig_km": null,
-          "dist_acumulada_km": 17.98
+          "dist_acumulada_km": 18.91
         }
       ]
     }
