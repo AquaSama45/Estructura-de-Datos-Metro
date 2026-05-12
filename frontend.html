@@ -643,6 +643,30 @@
     color: var(--surface);
   }
 
+  /* Cost badges in route list */
+  .costo-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    padding: 2px 6px;
+    border-radius: 2px;
+    margin-left: 6px;
+    vertical-align: middle;
+    letter-spacing: 0.03em;
+    display: inline-block;
+  }
+
+  .costo-badge.entrada {
+    background: #EEF6EC;
+    color: #2A7A4B;
+    border: 1px solid #B8DEB0;
+  }
+
+  .costo-badge.trasbordo {
+    background: #FFF7ED;
+    color: #9A3412;
+    border: 1px solid #FDBA74;
+  }
+
   /* ── Stats ── */
   .stats-grid {
     display: grid;
@@ -818,6 +842,10 @@
         <span class="stat-label">Paradas</span>
         <span class="stat-value" id="stat-paradas">—</span>
       </div>
+      <div class="stat-cell">
+        <span class="stat-label">Tarifas</span>
+        <span class="stat-value" id="stat-costo">—</span>
+      </div>
     </div>
   </div>
 
@@ -904,6 +932,50 @@
     H: '#DC3591', L: '#98671B', P: '#ED1A3B',
     1: '#007C88', 2: '#60A9AF', O: '#EF7580',
   };
+
+  /* ─── Tarifas 2026 (COP) ─────────────────────────────────────── */
+  const TIPO_LINEA = {
+    A: 'Metro',    B: 'Metro',
+    T: 'Tranvía',
+    1: 'MetroPlus', 2: 'MetroPlus', O: 'MetroPlus',
+    K: 'Cable',    L: 'Cable',    J: 'Cable',
+    H: 'Cable',    M: 'Cable',    P: 'Cable',
+  };
+
+  const TARIFAS_2026 = {
+    Metro:     3550,
+    'Tranvía': 3550,
+    MetroPlus: 3550,
+    Cable:     3550,
+  };
+
+  function tipoEstacion(nombre) {
+    const lineas = NODOS[nombre]?.lineas ?? [];
+    for (const prioridad of ['Metro', 'Tranvía', 'MetroPlus', 'Cable']) {
+      if (lineas.some(l => TIPO_LINEA[l] === prioridad)) return prioridad;
+    }
+    return 'Metro';
+  }
+
+  function calcularCosto(ruta) {
+    if (!ruta.length) return { total: 0, cobros: [] };
+    const cobros = [];
+    let total    = 0;
+    let tipoActual = tipoEstacion(ruta[0]);
+
+    total += TARIFAS_2026[tipoActual];
+    cobros.push({ estacion: ruta[0], tipo: tipoActual, monto: TARIFAS_2026[tipoActual], trasbordo: false });
+
+    for (let i = 1; i < ruta.length; i++) {
+      const tipoSig = tipoEstacion(ruta[i]);
+      if (tipoSig !== tipoActual) {
+        total += TARIFAS_2026[tipoSig];
+        cobros.push({ estacion: ruta[i], tipo: tipoSig, monto: TARIFAS_2026[tipoSig], trasbordo: true });
+        tipoActual = tipoSig;
+      }
+    }
+    return { total, cobros };
+  }
 
   const NOMBRES_LINEA = {
     A: 'Línea A — Niquía · La Estrella',
@@ -1277,6 +1349,14 @@
     document.getElementById('stat-dist').innerHTML  = distancia.toFixed(2) + '<small>km</small>';
     document.getElementById('stat-paradas').textContent = path.length;
 
+    // ── Calcular costo ────────────────────────────────────────────
+    const { total: costoTotal, cobros } = calcularCosto(path);
+    document.getElementById('stat-costo').innerHTML =
+      '$' + costoTotal.toLocaleString('es-CO');
+
+    // Construir mapa de estaciones con trasbordo para marcarlas
+    const trasbordasEn = new Map(cobros.filter(c => c.trasbordo).map(c => [c.estacion, c.tipo]));
+
     const lista = document.getElementById('paradas-list');
     lista.innerHTML = '';
     path.forEach((nombre, i) => {
@@ -1288,7 +1368,18 @@
         const bg = COLORES_LINEA[l] || '#888';
         return '<span class="linea-tag" style="background:' + bg + '">L' + l + '</span>';
       }).join('');
-      li.innerHTML = nombre + tags;
+
+      // Badge de costo si hay trasbordo en esta estación o es la entrada
+      let costoBadge = '';
+      if (i === 0) {
+        const tarifa = TARIFAS_2026[tipoEstacion(nombre)];
+        costoBadge = `<span class="costo-badge entrada" title="Tarifa de entrada 2026">$${tarifa.toLocaleString('es-CO')}</span>`;
+      } else if (trasbordasEn.has(nombre)) {
+        const tarifa = TARIFAS_2026[trasbordasEn.get(nombre)];
+        costoBadge = `<span class="costo-badge trasbordo" title="Cobro por trasbordo de modo">+$${tarifa.toLocaleString('es-CO')}</span>`;
+      }
+
+      li.innerHTML = nombre + tags + costoBadge;
       lista.appendChild(li);
     });
 

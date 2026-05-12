@@ -2,6 +2,76 @@ import json
 import unicodedata
 import networkx as nx
 
+# ─── Tarifas 2026 (COP) ──────────────────────────────────────────────────────
+# Fuente: Metro de Medellín — tarifas vigentes 2026
+TARIFAS_2026 = {
+    "Metro":          3_550,   # Líneas A y B (metro pesado)
+    "Tranvía":        3_550,   # Línea T (integrada con metro)
+    "MetroPlus":      3_550,   # Líneas 1, 2 y O (BRT / Bus Eléctrico)
+    "Cable":          3_550,   # Líneas K, L, J, H, M, P (cables aéreos)
+}
+
+# Tipo de cada línea
+TIPO_LINEA = {
+    "A": "Metro",    "B": "Metro",
+    "T": "Tranvía",
+    "1": "MetroPlus","2": "MetroPlus","O": "MetroPlus",
+    "K": "Cable",    "L": "Cable",    "J": "Cable",
+    "H": "Cable",    "M": "Cable",    "P": "Cable",
+}
+
+def calcular_costo(ruta: list[str], G: nx.Graph) -> tuple[int, list[str]]:
+    """
+    Calcula el costo total del viaje considerando trasbordos.
+
+    Regla tarifaria integrada del sistema SITVA:
+      - Se paga UN solo viaje (tarifa base) al entrar al sistema.
+      - Cada trasbordo entre líneas de DISTINTO tipo tarifario
+        genera un cobro adicional.
+      - Transbordos dentro del mismo tipo (p. ej. Metro A → Metro B)
+        NO generan cobro extra.
+
+    Retorna:
+      (costo_total_COP, lista de descripciones de cobros)
+    """
+    if len(ruta) < 1:
+        return 0, []
+
+    cobros: list[str] = []
+    costo_total: int  = 0
+
+    # Determina el tipo de cada estación según las líneas que la tocan
+    def tipo_estacion(nombre: str) -> str:
+        lineas = G.nodes[nombre].get("lineas", [])
+        # Prioridad: Metro > Tranvía > MetroPlus > Cable
+        for prioridad in ("Metro", "Tranvía", "MetroPlus", "Cable"):
+            for l in lineas:
+                if TIPO_LINEA.get(l) == prioridad:
+                    return prioridad
+        return "Metro"  # fallback
+
+    # Primer pago al abordar
+    tipo_actual = tipo_estacion(ruta[0])
+    tarifa_entrada = TARIFAS_2026[tipo_actual]
+    costo_total += tarifa_entrada
+    cobros.append(f"Entrada en {ruta[0]} ({tipo_actual}): ${tarifa_entrada:,}")
+
+    # Recorre la ruta buscando trasbordos
+    for i in range(1, len(ruta)):
+        tipo_siguiente = tipo_estacion(ruta[i])
+
+        # Trasbordo detectado: el tipo cambia
+        if tipo_siguiente != tipo_actual:
+            tarifa_trasbordo = TARIFAS_2026[tipo_siguiente]
+            costo_total += tarifa_trasbordo
+            cobros.append(
+                f"Trasbordo en {ruta[i]} "
+                f"({tipo_actual} → {tipo_siguiente}): ${tarifa_trasbordo:,}"
+            )
+            tipo_actual = tipo_siguiente
+
+    return costo_total, cobros
+
 # Normalización y aliases
 
 ARTICULOS = {"el", "la", "los", "las", "de", "del", "un", "una"}
@@ -119,8 +189,18 @@ else:
     try:
         ruta = nx.shortest_path(G, origen_nodo, destino_nodo, weight="weight")
         dist = nx.shortest_path_length(G, origen_nodo, destino_nodo, weight="weight")
+
+        # Calcular costo del viaje
+        costo_total, cobros = calcular_costo(ruta, G)
+
         print(f"  {origen_nodo} → {destino_nodo}")
         print(f"  Distancia : {dist:.2f} km")
-        print(f"  Paradas   : {' → '.join(ruta)}")
+        print(f"  Paradas   : {len(ruta)}  |  Costo estimado: ${costo_total:,} COP")
+        print()
+        print("  Detalle de cobros:")
+        for cobro in cobros:
+            print(f"    · {cobro}")
+        print()
+        print(f"  Ruta: {' → '.join(ruta)}")
     except nx.NetworkXNoPath:
         print(f"  ✗ No hay camino entre {origen_nodo} y {destino_nodo}")
